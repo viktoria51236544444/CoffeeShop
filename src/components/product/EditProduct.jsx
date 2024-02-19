@@ -24,8 +24,13 @@ const EditProduct = () => {
       editProduct(id, product )
     }
     useEffect(()=>{
-        getOneProduct(id)
-    },[oneProduct])
+      getOneProduct(id)
+    },[])
+    useEffect(()=>{
+      if(oneProduct){
+        setProduct(oneProduct)
+      }
+    }, [oneProduct])
   return (
     <form>
         <h2>EDIT PRODUCT</h2>
@@ -33,7 +38,7 @@ const EditProduct = () => {
         <input value={product.description}  onChange={handleInput} name='description' type="text" placeholder='Descroption' />
         <input value={product.price} onChange={handleInput} name='price' type="number" placeholder='Price' />
         <input value={product.img}  onChange={handleInput} name='img' type="url" placeholder='Image' />
-        <button onClick={handleClick}>ADD</button>
+        <button onClick={handleClick}>SAVE</button>
       </form>
   )
 }

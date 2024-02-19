@@ -7,7 +7,7 @@ import ProductList from "../components/product/ProductList";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
-    {id: 1, link: "/", element: <EditPage/> },
+    {id: 1, link: "/edit", element: <EditPage/> },
     {id: 2, link: "/admin", element: <AdminPage/>},
     {id: 3, link: "/products", element: <ProductList/>}
   ]
