@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useProducts } from '../../context/ProductContext'
 
 const AddProducts = () => {
-    const {addProduct} = useProducts;
+    const {addProduct} = useProducts();
     const [product, setProduct] = useState({
         title: "",
         description: "",

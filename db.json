@@ -1,4 +1,21 @@
 {
-    "products":[],
-    "category":[]
+  "products": [
+    {
+      "id": "8f78",
+      "title": "snxka",
+      "description": "saxn",
+      "category": "",
+      "price": 123,
+      "img": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTERUTExIWFhUXGCAaGRcYGCIgIBshICAgHyIiICAhHikiICElICIeIjIiJSkrLi4uHh8zODMuNygtMS0BCgoKDg0OGxAQGzUmICYtLy0yMi03LS0yLS4vLy0vLS0wLS8tLS8rLS8vKy0vLy8tLS8tLS8tNS0tLS0tLS0tLf/AABEIAKgBLAMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAAEBQIDBgABB//EADwQAAICAAUCBQIEBQIGAgMBAAECAxEABBIhMQVBBhMiUWEycRRCgZEjUqGxwXLwFTNigtHhJPEWQ2MH/8QAGQEBAQEBAQEAAAAAAAAAAAAAAQIAAwQF/8QAKxEAAgICAQIFAwQDAAAAAAAAAAECESExEiJBMlFhcfADgZETodHxscHh/9oADAMBAAIRAxEAPwDB5bxhKF0GRgo7XgzpWQGYzBmzESPEFoL5gBNDnSDqPbb5x50Pp+SQP50etxakO97gUSCtbEmxsdq3POA8h1NY6vgWGO1gnY7EfA71v848rpeE+inJtcw+XpOQlmOnVFGBWlG3Jvf6r7bYU552jkMccjulDhey9ifYD2GOzKPLMzRkBDu7G6B7nYX7be5+cMejZhsmWlEiSggWyC6+4ZQR9xt84ytLOSnxb6VR3TfGDKhUt6ew9/0xTl2Zs1FLmIzEo3GwBavp7dh7/GIT5NppUzOXgWiT6QVGp+dl7HvX7DfC+SDNZiTW2t5WNHUeANt7O2/YDCopaJlOT8WTdZLyZs7Fr0yRqCwDgMysSAd6+nkhTdHBOamAmyzAiyJDdb0NNVtwAbocHVjMZTpOYyJGalQSRldJVTvyDYsdqv5473gvN5xeoQeTEqqdQKtM1af9IFm/y8Af1xDX4LUq7ZDOtxySSCHKEeao1yG6AXSKDGrDb6e304QtneoPE6tq0htBLOKWqs8/SLBsbb4v8vM9N"
+    },
+    {
+      "id": "c862",
+      "title": "Coffee",
+      "description": "shxabs",
+      "category": "",
+      "price": 123,
+      "img": "https://assets.bonappetit.com/photos/5c366551f212512d0e6cefd0/16:9/w_2560%2Cc_limit/Basically-Coffee-0219-03.jpg"
+    }
+  ],
+  "category": []
 }

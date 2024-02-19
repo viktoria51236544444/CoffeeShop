@@ -1,5 +1,6 @@
 import React from 'react'
-import AddProducts from '../product/AddProducts'
+import AddProducts from '../components/product/AddProducts'
+
 
 const AdminPage = () => {
   return (

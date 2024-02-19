@@ -3,7 +3,7 @@ import { ACTIONS, API } from "../helpers/const";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 export const productContext = createContext()
-export const useProducts = () => useContext()
+export const useProducts = () => useContext(productContext)
 
 const ProductContext = ({children}) => {
   const navigate = useNavigate();
@@ -44,7 +44,7 @@ const ProductContext = ({children}) => {
 
   // ! GET_One_Product
   const getOneProduct = async(id)=>{
-    const {data} = await axios (`${API}/${id}`)
+    const {data} = await axios(`${API}/${id}`)
     dispatch({
       type: ACTIONS.GET_ONE_PRODUCT,
       payload: data,

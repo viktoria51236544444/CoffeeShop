@@ -1,12 +1,15 @@
 import React from "react";
-import EditPage from "../components/pages/EditPage";
 import { Route, Routes } from "react-router-dom";
-import AdminPage from "../components/pages/AdminPage";
+import AdminPage from "../pages/AdminPage";
+import EditPage from "../pages/EditPage";
+import ProductList from "../components/product/ProductList";
+
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
     {id: 1, link: "/", element: <EditPage/> },
-    {id: 2, link: "/admin", element: <AdminPage/>}
+    {id: 2, link: "/admin", element: <AdminPage/>},
+    {id: 3, link: "/products", element: <ProductList/>}
   ]
   return (
     <Routes>
