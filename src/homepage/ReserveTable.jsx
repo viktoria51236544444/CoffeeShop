@@ -1,10 +1,11 @@
 import React from 'react'
 import reserve from './assets/Reserve Img.png'
-import './aidana.css'
+import './aidana.scss'
 
 const ReserveTable = () => {
   return (
-    <div className='reserve_table'>
+    <form className='reserve'>
+      <div className='reserve_table'>
       <div className='img_reserve'>
         <img src={reserve} width={400} alt="" />
       </div>
@@ -22,6 +23,7 @@ const ReserveTable = () => {
          </div>
       </div>
     </div>
+    </form>
   )
 }
 
