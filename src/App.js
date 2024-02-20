@@ -7,9 +7,9 @@ import OurBlog from "./homepage/OurBlog";
 const App = () => {
   return (
     <div>
-      <OurBlog />
+      {/* <OurBlog />
       <ReserveTable />
-      <Recomended />
+      <Recomended /> */}
       <MainRoutes />
     </div>
   );
