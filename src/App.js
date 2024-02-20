@@ -1,12 +1,16 @@
-
 import React from "react";
-import MainContentBlock1 from "./homepage/MainContentBlock1";
+import MainRoutes from "./routes/MainRoutes";
+import ReserveTable from "./homepage/ReserveTable";
+import Recomended from "./homepage/Recomended";
 
 const App = () => {
-  return <div>
-    <MainContentBlock1/>
-  </div>;
+  return (
+    <div>
+      <ReserveTable />
+      <Recomended />
+      <MainRoutes />
+    </div>
+  );
 };
 
-
-export default App
+export default App;

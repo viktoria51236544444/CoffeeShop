@@ -1,0 +1,13 @@
+{
+  "products": [
+    {
+      "id": "4057",
+      "title": "Coffee",
+      "description": "Flavour",
+      "category": "",
+      "price": 123,
+      "img": "https://cdnimg.carepac.com/wp-content/uploads/2023/02/The-Bean-Coffee-Pouch-Bag-300x300.jpg"
+    }
+  ],
+  "category": []
+}
