@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika&family=Dancing+Script&display=swap');
+@import url("https://fonts.googleapis.com");
+@import url("https://fonts.gstatic.com" );
+@import url("https://fonts.googleapis.com/css2?family=Andika&family=Dancing+Script&display=swap");
+.reserve_table{
+    background-image: linear-gradient(to right, #684638, #462d22);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img_reserve{
+    width: 40%;
+    margin: 0px 0px 70px 0px;
+}
+.inputs_reserve{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.inputs_reserve input{
+    box-sizing: border-box;
+    position: static;
+    height: 54px;
+    border: 1px solid rgb(214, 214, 214);
+    border-radius: 12px;
+    background: rgb(255, 255, 255);
+    padding: 14px 24px 14px 12px;
+}
+input::placeholder{
+    color: #A4663C;
+    font-family: gstatic;
+}
+
+.button_reserve{
+    position: static;
+    width: 160px;
+    height: 50px;
+    box-sizing: border-box;
+    border-color: rgba(247, 225, 188, 0.1);
+    border-radius: 49px;
+    background: rgba(247, 225, 188, 0.1);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 31px;
+    font-family: gstatic;
+    color: rgb(248, 228, 190);
+    text-transform: capitalize;
+}
+.input_input{
+    width: 400px;
+}
+.input_input_time{
+   margin-right: 48px;
+}
+.input_input_email{
+    margin-right: 30px;
+    width: 210px;
+}
