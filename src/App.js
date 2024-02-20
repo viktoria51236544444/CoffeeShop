@@ -8,7 +8,9 @@ const App = () => {
   return (
     <div>
       <ReserveTable />
+
       <Recomended />
+
       <MainRoutes />
     </div>
   );
