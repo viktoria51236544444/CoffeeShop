@@ -15,6 +15,7 @@
       "category": "",
       "price": 3456,
       "img": "https://cdnimg.carepac.com/wp-content/uploads/2023/02/The-Bean-Coffee-Pouch-Bag-300x300.jpg"
+<<<<<<< HEAD
     },
     {
       "id": "b609",
@@ -31,6 +32,8 @@
       "category": "",
       "price": 123,
       "img": "https://cdnimg.carepac.com/wp-content/uploads/2023/02/The-Bean-Coffee-Pouch-Bag-300x300.jpg"
+=======
+>>>>>>> e394c19c400646ec01cd6ebec60490ade4a8d5bb
     }
   ],
   "category": []

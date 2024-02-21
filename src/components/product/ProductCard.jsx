@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useContext } from "react";
+=======
+import React, { useState } from "react";
+>>>>>>> e394c19c400646ec01cd6ebec60490ade4a8d5bb
 import { useProducts } from "../../context/ProductContext";
 import { useNavigate } from "react-router-dom";
 import "./product.scss";
@@ -39,21 +43,26 @@ const ProductCard = ({ elem }) => {
             Добавить в корзину
           </button>
         </div>
-        <div style={{ display: "flex", justifyContent: "space-around" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-around",
+            alignItems: "center",
+          }}
+        >
           <img
             style={{
-              width: "40px",
-              height: "40px",
+              width: "15%",
+              height: "15%",
               cursor: "pointer",
             }}
-            src="https://svgsilh.com/svg/309417-ff9800.svg"
+            src="https://svgsilh.com/svg/29435-ff9800.svg"
             alt=""
           />
           <img
-            className="svg"
             style={{
-              width: "40px",
-              height: "40px",
+              width: "17%",
+              height: "17%",
               cursor: "pointer",
             }}
             src="https://svgsilh.com/svg/2438744-ff9800.svg"

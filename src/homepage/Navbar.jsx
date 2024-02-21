@@ -16,6 +16,12 @@ const Navbar = () => {
       <nav className="nav">
         <img className="nav__logo" src={logo} alt="" />
         <div className="nav-div">
+          <img
+            className="nav__img"
+            style={{ width: "35px", height: "35px", marginTop: "-3px" }}
+            src="https://svgsilh.com/svg/2438744-ff9800.svg"
+            alt=""
+          />
           <img className="nav__img" src={registration} alt="" />
           <NavLink to={"/cart"}>
             <div className="cart-container">
