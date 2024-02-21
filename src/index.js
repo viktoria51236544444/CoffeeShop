@@ -7,10 +7,9 @@ import ProductContext from "./context/ProductContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <BrowserRouter>
-      <ProductContext>
+  <BrowserRouter>
+    <ProductContext>
       <App />
-      </ProductContext>
-    </BrowserRouter>
-
+    </ProductContext>
+  </BrowserRouter>
 );

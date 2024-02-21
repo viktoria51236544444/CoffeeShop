@@ -1,6 +1,9 @@
 import React from "react";
 import reserve from "./assets/Reserve Img.png";
 import "./aidana.scss";
+import beans from "./assets/reserve-img/form-beanRight.png";
+import bg2 from "./assets/reserve-img/reserver-gradient2.png";
+import bg from "./assets/reserve-img/reserve-gradient1.png";
 
 const ReserveTable = () => {
   return (
