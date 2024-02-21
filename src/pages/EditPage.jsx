@@ -1,14 +1,12 @@
-import React from 'react'
-import EditProduct from '../components/product/EditProduct'
-
-
+import React from "react";
+import EditProduct from "../components/product/EditProduct";
 
 const EditPage = () => {
   return (
     <div>
-     <EditProduct/>
+      <EditProduct />
     </div>
-  )
-}
+  );
+};
 
-export default EditPage
+export default EditPage;
