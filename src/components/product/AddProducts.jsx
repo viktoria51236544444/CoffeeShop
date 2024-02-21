@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useProducts } from "../../context/ProductContext";
 import "./product.scss";
 
 const AddProducts = () => {
-  const { addProduct } = useProducts();
+  const { addProduct, categories, getCategories } = useProducts();
   const [product, setProduct] = useState({
     title: "",
     description: "",
@@ -11,6 +11,11 @@ const AddProducts = () => {
     price: 0,
     img: "",
   });
+
+  useEffect(() => {
+    getCategories();
+  }, []);
+
   const handleInput = (e) => {
     if (e.target.name === "price") {
       const obj = {
@@ -23,9 +28,11 @@ const AddProducts = () => {
       setProduct(obj);
     }
   };
+
   const handleClick = () => {
-    addProduct(product);
+    addProduct({ ...product, category: product.category });
   };
+
   return (
     <div>
       <form className="add_container">
@@ -42,6 +49,16 @@ const AddProducts = () => {
           type="text"
           placeholder="Description"
         />
+
+        <select name="category" id="categorySelect" onChange={handleInput}>
+          {categories.length > 0 &&
+            categories.map((category) => (
+              <option key={category.id} value={category.name}>
+                {category.name}
+              </option>
+            ))}
+        </select>
+
         <input
           onChange={handleInput}
           name="price"
@@ -54,7 +71,9 @@ const AddProducts = () => {
           type="url"
           placeholder="Image"
         />
-        <button onClick={handleClick}>ADD</button>
+        <button type="button" onClick={handleClick}>
+          ADD
+        </button>
       </form>
     </div>
   );
