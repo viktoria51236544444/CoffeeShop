@@ -216,7 +216,7 @@ body {
   background-color: #221518;
   margin: 0;
 }
-/* header start */
+/*? header start */
 .nav {
   display: flex;
   align-items: center;
@@ -237,9 +237,59 @@ body {
   margin-left: 500%;
   gap: 10px;
 }
+/* Ваш стиль CSS */
 .nav__img {
   width: 25px;
   height: 25px;
+}
+
+@keyframes moveCart {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(20px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes shakeCart {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes swingCart {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+.nav__img.cart {
+  animation: moveCart 2s ease-in-out infinite, shakeCart 1s ease-in-out infinite,
+    swingCart 1s ease-in-out infinite;
 }
 
 .hero {
@@ -328,4 +378,59 @@ body {
   margin-top: 150px;
   margin-left: 325px;
 }
-/* header finish */
+/*? header finish */
+/*! PAPULARMENU START */
+.block1 {
+  display: flex;
+  justify-content: space-between;
+  color: #f8e4be;
+  font-family: Dancing Script;
+}
+.block2 {
+  display: flex;
+  justify-content: space-between;
+  color: #f8e4be;
+  font-family: Dancing Script;
+}
+.block3 {
+  display: flex;
+  justify-content: space-between;
+  color: #f8e4be;
+  font-family: Dancing Script;
+}
+.block4 {
+  display: flex;
+  justify-content: space-between;
+  color: #f8e4be;
+  font-family: Dancing Script;
+}
+.container__menu {
+  margin-top: 10%;
+}
+.price {
+  margin-left: 20px;
+  font-size: 24px;
+}
+.asortiment {
+  font-size: 48px;
+}
+.menu {
+  font-family: Dancing Script;
+  margin-left: 40%;
+  margin-top: 10%;
+}
+.popularmenu {
+  margin: 0;
+  position: absolute;
+  z-index: -1;
+  margin-left: 32%;
+  margin-top: -160px;
+}
+.our__menu {
+  font-size: 36px;
+  font-family: Andika;
+  color: #f8e4be;
+  margin-left: 79%;
+  margin-top: 3%;
+}
+/*! PAPULARMENU FINISH */
