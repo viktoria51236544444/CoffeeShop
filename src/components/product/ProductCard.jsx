@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-import React, { useContext } from "react";
-=======
-import React, { useState } from "react";
->>>>>>> e394c19c400646ec01cd6ebec60490ade4a8d5bb
+
+import React from "react";
+
 import { useProducts } from "../../context/ProductContext";
 import { useNavigate } from "react-router-dom";
 import "./product.scss";
