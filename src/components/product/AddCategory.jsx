@@ -19,6 +19,8 @@ const AddCategory = (props) => {
     }
     handleClose();
   };
+  console.log(handleClose);
+
   return (
     <div>
       {open && (
@@ -31,7 +33,7 @@ const AddCategory = (props) => {
               onChange={(e) => setCategory(e.target.value)}
             />
             <div className="addCategory_container">
-              <button onClick={handleClick}>Add </button>
+              <button onClick={handleClick}>ADD </button>
             </div>
           </div>
         </div>

@@ -138,15 +138,13 @@ nav {
 
 .inside_container {
   display: flex;
-  flex-direction: column;
   align-items: center;
 }
 .addCategory_modal {
-  width: 400px;
+  width: 650px;
   position: fixed;
   left: 30%;
   top: 30%;
-  display: flex;
   border: 2px solid black;
   padding: 16px;
   background-color: #fff3e0;
@@ -167,9 +165,10 @@ nav {
     font-size: 21px;
     line-height: 27px;
     background-color: #fff;
-    margin-bottom: 40px;
   }
   button {
+    margin-left: 50px;
+    border-radius: 12px;
     font-family: leiko;
     font-weight: 400;
     font-size: 24px;

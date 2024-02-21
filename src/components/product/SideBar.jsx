@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./product.scss";
 import { useProducts } from "../../context/ProductContext";
 
-const Navbar = () => {
+const SideBar = () => {
   const { categories, getCategories, fetchByParams } = useProducts();
   useEffect(() => {
     getCategories();
@@ -40,4 +40,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default SideBar;
