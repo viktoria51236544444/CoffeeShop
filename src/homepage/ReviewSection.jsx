@@ -56,7 +56,10 @@ const ReviewSection = () => {
             <div
               className="swiper review__slider-container"
               style={{
-                backgroundImage: `url(${bg})`,
+                backgroundImage: `url(${bg}
+                  )`,
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
               }}
             >
               <div className="swiper-wrapper review__slider swiper-container">
@@ -69,6 +72,7 @@ const ReviewSection = () => {
                     prevEl: ".swiper-button-prev3",
                   }}
                   onSlideChange={(swiper) => handleSlideChange(swiper)}
+                  speed={1500}
                 >
                   <SwiperSlide>
                     <div className="swiper-slide swiper-slide3 review__card">
@@ -93,7 +97,6 @@ const ReviewSection = () => {
                       </div>
                     </div>
                   </SwiperSlide>
-
                   <SwiperSlide>
                     <div className="swiper-slide review__card">
                       <div className="review__marks">
