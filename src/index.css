@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Andika&family=Dancing+Script&display=swap");
 body {
   overflow-x: hidden;
-  background-color: #442318;
+  /* background-color: #442318; */
 }
 
 /* ! BAYANA Start MainContentBlock1 */
@@ -213,7 +213,7 @@ body {
 /* ! BAYANA FINISH MainContentBlock1 */
 
 body {
-  background-color: #221518;
+  /* background-color: #221518; */
   margin: 0;
 }
 /*? header start */

@@ -1,19 +1,14 @@
 import React from "react";
 import MainRoutes from "./routes/MainRoutes";
-import ReserveTable from "./homepage/ReserveTable";
-import Recomended from "./homepage/Recomended";
-import OurBlog from "./homepage/OurBlog";
+import SideBar from "./components/product/SideBar";
 
 const App = () => {
   return (
     <div>
-      {/* <OurBlog />
-      <ReserveTable />
-      <Recomended /> */}
+      {/* <SideBar /> */}
       <MainRoutes />
     </div>
   );
 };
-
 
 export default App;

@@ -9,14 +9,6 @@
       "img": "https://cdnimg.carepac.com/wp-content/uploads/2023/02/The-Bean-Coffee-Pouch-Bag-300x300.jpg"
     },
     {
-      "id": "aedc",
-      "title": "nkln",
-      "description": "msdfgh",
-      "category": "",
-      "price": 123,
-      "img": "https://cdnimg.carepac.com/wp-content/uploads/2023/02/The-Bean-Coffee-Pouch-Bag-300x300.jpg"
-    },
-    {
       "id": "651a",
       "title": "fdghnj",
       "description": "cvb ",
@@ -25,13 +17,38 @@
       "img": "https://cdnimg.carepac.com/wp-content/uploads/2023/02/The-Bean-Coffee-Pouch-Bag-300x300.jpg"
     },
     {
-      "id": "b609",
-      "title": "4dfc",
-      "description": "gfvgf",
+      "id": "1541",
+      "title": "jnkl",
+      "description": "kmkl",
       "category": "",
-      "price": 55,
+      "price": 123,
       "img": "https://cdnimg.carepac.com/wp-content/uploads/2023/02/The-Bean-Coffee-Pouch-Bag-300x300.jpg"
     }
   ],
-  "category": []
+  "category": [
+    {
+      "id": "4bdd",
+      "name": "hbdcjhs"
+    },
+    {
+      "id": "0f4c",
+      "name": "bncjkwen fckwenfwqen;kf"
+    },
+    {
+      "id": "4c5a",
+      "name": "kmk"
+    },
+    {
+      "id": "eeae",
+      "name": "t-shirt"
+    },
+    {
+      "id": "3252",
+      "name": " "
+    },
+    {
+      "id": "2915",
+      "name": " "
+    }
+  ]
 }

@@ -2,6 +2,7 @@ import React from "react";
 import logo from "./assets/logo (1).png";
 import registration from "./assets/mdi-light_account.png";
 import shoping from "./assets/ph_shopping-cart-light.png";
+import "./aidana.scss";
 const Navbar = () => {
   return (
     <header>
