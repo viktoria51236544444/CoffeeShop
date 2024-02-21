@@ -234,7 +234,7 @@ body {
 
 .nav-div {
   display: flex;
-  margin-left: 500%;
+  margin-left: 350%;
   gap: 10px;
 }
 /* Ваш стиль CSS */
@@ -588,7 +588,7 @@ body {
   display: inline-block;
   flex-wrap: wrap;
   margin-left: 60px;
-  margin-top: 50px;
+  margin-top: 120px;
 
   &:hover {
     transform: scale(1.05);
