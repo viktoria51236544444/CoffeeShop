@@ -12,7 +12,7 @@ const Recomended = () => {
   return (
     <div className="recommended">
       <div>
-        <h4>Recommended</h4>
+        <h2>Recommended</h2>
       </div>
       <motion.div ref={carousel} className="carousel">
         <motion.div
@@ -24,7 +24,7 @@ const Recomended = () => {
             <motion.div className="item">
               <img src={image} key={image} alt="" />
               <div className="titles">
-                <h2>Arabica</h2>
+                <h3>Arabica</h3>
                 <p>Dark Roast</p>
               </div>
             </motion.div>

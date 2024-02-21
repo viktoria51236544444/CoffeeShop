@@ -53,6 +53,9 @@ const OurBlog = () => {
   };
   return (
     <div className="container">
+      <div className="our_title">
+        <h2>Our Blog</h2>
+      </div>
       <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
         <SwiperSlide>
           <div className="blog_content_1">
