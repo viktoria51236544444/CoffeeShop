@@ -434,6 +434,217 @@ body {
   margin-top: 3%;
 }
 /*! PAPULARMENU FINISH */
+
+
+/* ! Reviews Start Oxana */
+.review__container {
+  padding: 241px 10px 142px;
+}
+
+.review__container .review__title h2 {
+  font-family: Dancing Script;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 77px;
+  transform: translateY(-50px);
+  height: 0;
+  color: #f8e4be;
+  position: relative;
+  z-index: 20;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.swiper-slide {
+  transition: transform 0.3s ease;
+}
+
+.swiper-slide-active {
+  transform: scale(1.1) translateY(-20px);
+}
+
+.swiper-slide-next {
+  transform: scale(0.9) translateY(20px);
+}
+
+.swiper-slide-prev {
+  transform: scale(0.9) translateY(20px);
+}
+
+@media screen and (max-width: 650px) {
+  .review__container .review__title h2 {
+    font-size: 48px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .review__container .review__title h2 {
+    font-size: 36px;
+  }
+}
+
+.review__container .review__border {
+  margin: 0 auto;
+  border-radius: 35px;
+  border-left: 3px solid #54362a;
+  border-bottom: 3px solid #54362a;
+  max-width: 1200px;
+  height: 100%;
+  padding: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.review__container .review__border .review__slider-container {
+  width: 1175px;
+  height: 461px;
+  border-radius: 35px;
+}
+
+.review__container
+  .review__border
+  .review__slider-container
+  .swiper-button-next3,
+.review__container
+  .review__border
+  .review__slider-container
+  .swiper-button-prev3 {
+  color: #f8e4be;
+}
+
+.review__container
+  .review__border
+  .review__slider-container
+  .review__slider
+  .review__card {
+  max-width: 342px;
+  max-height: 362px;
+  background: rgba(102, 55, 29, 0.75);
+  border-radius: 15px 15px 0 0;
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+  .review__container
+    .review__border
+    .review__slider-container
+    .review__slider
+    .review__card {
+    width: 320px;
+  }
+}
+
+.review__container
+  .review__border
+  .review__slider-container
+  .review__slider
+  .review__card:hover {
+  background: rgba(116, 71, 47, 0.75);
+}
+
+.review__container
+  .review__border
+  .review__slider-container
+  .review__slider
+  .review__card
+  .review__marks {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  width: 85%;
+  transform: translateY(-12px);
+}
+
+.review__container
+  .review__border
+  .review__slider-container
+  .review__slider
+  .review__card
+  .review__card-image {
+  margin-top: 22px;
+  margin-bottom: 22px;
+}
+
+.review__container
+  .review__border
+  .review__slider-container
+  .review__slider
+  .review__card
+  .review__card-image
+  img {
+  border-radius: 50%;
+  border: 4px solid #f8e4be;
+  max-width: 102px;
+  max-height: 102px;
+}
+
+.review__container
+  .review__border
+  .review__slider-container
+  .review__slider
+  .review__card
+  .review__name {
+  max-width: 62px;
+}
+
+.review__container
+  .review__border
+  .review__slider-container
+  .review__slider
+  .review__card
+  .review__name
+  p {
+  text-align: center;
+  font-family: Andika;
+  font-size: 16px;
+  line-height: 150.5%;
+  letter-spacing: 0.035em;
+  text-transform: capitalize;
+  color: #f0e3d0;
+}
+
+.review__container
+  .review__border
+  .review__slider-container
+  .review__slider
+  .review__card
+  .review__star {
+  margin-top: 22px;
+  margin-bottom: 22px;
+}
+
+.review__container
+  .review__border
+  .review__slider-container
+  .review__slider
+  .review__card
+  .review__describe {
+  max-width: 285px;
+}
+
+.review__container
+  .review__border
+  .review__slider-container
+  .review__slider
+  .review__card
+  .review__describe
+  p {
+  font-family: Andika;
+  font-size: 12px;
+  line-height: 150.5%;
+  text-align: center;
+  letter-spacing: 0.035em;
+  text-transform: capitalize;
+  color: #f0e3d0;
+}
+
+/* ! Reviews Finish Oxana */
+
 /*! Menu start */
 .block5 {
   display: flex;
@@ -633,3 +844,4 @@ body {
 }
 
 /*! styles finish */
+
