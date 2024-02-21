@@ -1,16 +1,28 @@
 import React, { useEffect } from "react";
-import { coffeeCarts } from "../../context/CartContext";
+import { useCoffeeCart } from "../../context/CartContext";
 
 const Cart = () => {
-  const { coffeeCart, getCoffeeCart } = coffeeCarts();
-
+  const {
+    coffeeCart,
+    getCoffeeCart,
+    changeProductCountInCoffeeCart,
+    deleteProductInCoffeeCart,
+  } = useCoffeeCart();
   useEffect(() => {
     getCoffeeCart();
   }, []);
 
   return (
     <div className="cart-container">
-      <h2>Корзина</h2>
+      {coffeeCart.products.map((elem) => (
+        <div className="card_content">
+          <img src={elem.item.img} alt="" />
+          <p>{elem.item.title}</p>
+          <p>{elem.item.description}</p>
+          <p>{elem.item.category}</p>
+          <p>${elem.item.price}</p>
+        </div>
+      ))}
     </div>
   );
 };

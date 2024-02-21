@@ -1,11 +1,17 @@
 import React, { createContext, useContext, useReducer } from "react";
 import { ACTIONS } from "../helpers/const";
-import { getLocalStorage } from "../helpers/function";
+import {
+  getLocalStorage,
+  getProductsCountInCoffeeCart,
+  subPriceResult,
+  totalPriceResult,
+} from "../helpers/function";
 
-export const coffeeCarts = createContext();
+const coffeeCartContext = createContext();
+export const useCoffeeCart = () => useContext(coffeeCartContext);
 const INIT_STATE = {
   coffeeCart: JSON.parse(localStorage.getItem("coffeeCart")),
-  cartNum: null,
+  coffeeCartLength: getProductsCountInCoffeeCart,
 };
 const reducer = (state = INIT_STATE, action) => {
   switch (action.type) {
@@ -21,6 +27,7 @@ const CartContext = ({ children }) => {
   // ! GET_COFFEE_CART
   const getCoffeeCart = () => {
     let coffeeCart = getLocalStorage();
+    console.log(coffeeCart);
     if (!coffeeCart) {
       localStorage.setItem(
         "coffeeCart",
@@ -49,16 +56,80 @@ const CartContext = ({ children }) => {
         totalPrice: 0,
       };
     }
-    letNewCoffeeProduct = {
+    let NewCoffeeProduct = {
       item: coffee,
       count: 1,
       subPrice: coffee.price,
     };
+    let coffeeProductToFind = coffeeCart.products.filter(
+      (elem) => elem.item.id === coffee.id
+    );
+    if (coffeeProductToFind.length === 0) {
+      coffeeCart.products.push(NewCoffeeProduct);
+    } else {
+      coffeeCart.products = coffeeCart.products.filter(
+        (elem) => elem.item.id !== coffee.id
+      );
+    }
+    coffeeCart.totalPrice = totalPriceResult(coffeeCart.products);
+    localStorage.setItem("coffeeCart", JSON.stringify(coffeeCart));
+    dispatch({
+      type: ACTIONS.GET_COFFEE_CART,
+      payload: coffeeCart,
+    });
+  };
+  const checkProductInCoffeeCart = (id) => {
+    let coffeeCart = getLocalStorage();
+    if (coffeeCart) {
+      let newCoffeeCart = coffeeCart.products.filter(
+        (elem) => elem.item.id === id
+      );
+      return newCoffeeCart.length > 0 ? true : false;
+    }
+  };
+  const changeProductCountInCoffeeCart = (id, count) => {
+    let coffeeCart = getLocalStorage();
+    coffeeCart.products = coffeeCart.products.map((elem) => {
+      if (elem.item.id === id) {
+        elem.count = count;
+        elem.subPrice = subPriceResult(elem);
+      }
+      return elem;
+    });
+    coffeeCart.totalPrice = totalPriceResult(coffeeCart.products);
+    localStorage.setItem("coffeeCart", JSON.stringify(coffeeCart));
+    dispatch({
+      type: ACTIONS.GET_COFFEE_CART,
+      payload: coffeeCart,
+    });
+  };
+  //! DELETE PRODUCT IN  COFFEE CART
+  const deleteProductInCoffeeCart = (id) => {
+    let coffeeCart = getLocalStorage();
+    coffeeCart.products = coffeeCart.products.filter(
+      (elem) => elem.item.id !== id
+    );
+    coffeeCart.totalPrice = totalPriceResult(coffeeCart.products);
+    localStorage.setItem("coffeeCart", JSON.stringify(coffeeCart));
+    dispatch({
+      type: ACTIONS.GET_COFFEE_CART,
+      payload: coffeeCart,
+    });
   };
   const values = {
     coffeeCart: state.coffeeCart,
     getCoffeeCart,
+    addProductToCoffeeCart,
+    checkProductInCoffeeCart,
+    changeProductCountInCoffeeCart,
+    deleteProductInCoffeeCart,
+    getProductsCountInCoffeeCart,
   };
-  return <coffeeCarts.Provider value={values}>{children}</coffeeCarts.Provider>;
+
+  return (
+    <coffeeCartContext.Provider value={values}>
+      {children}
+    </coffeeCartContext.Provider>
+  );
 };
 export default CartContext;
