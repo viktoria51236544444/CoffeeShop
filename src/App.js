@@ -1,21 +1,23 @@
 import React from "react";
 import MainRoutes from "./routes/MainRoutes";
-import Navbar from "./homepage/Navbar";
-import Header from "./homepage/Header";
-import MainContentBlock1 from "./homepage/MainContentBlock1";
-import Recomended from "./homepage/Recomended";
-import ReserveTable from "./homepage/ReserveTable";
+import Subscribe from "./homepage/Subscribe";
 import OurBlog from "./homepage/OurBlog";
+import Footer from "./homepage/Footer";
+import ReserveTable from "./homepage/ReserveTable";
+import Recomended from "./homepage/Recomended";
+import ReviewSection from "./homepage/ReviewSection";
 
 const App = () => {
   return (
     <div>
-      <Navbar />
-      <Header />
-      <MainContentBlock1 />
-      <Recomended />
-      <ReserveTable />
       <OurBlog />
+      <ReserveTable />
+
+      <Recomended />
+      <ReviewSection />
+      <Subscribe />
+      <Footer />
+
       <MainRoutes />
     </div>
   );
