@@ -16,7 +16,6 @@ const ProductContext = ({ children }) => {
     switch (action.type) {
       case ACTIONS.GET_PRODUCTS:
         return { ...state, products: action.payload };
-        return { ...state, products: action.payload };
 
       case ACTIONS.GET_ONE_PRODUCT:
         return { ...state, oneProduct: action.payload };
@@ -25,9 +24,10 @@ const ProductContext = ({ children }) => {
         return { ...state, categories: action.payload };
     }
   };
-
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
+
   //! CREATE
+
   const addProduct = async (newProduct) => {
     await axios.post(API, newProduct);
     navigate("/products");
@@ -35,7 +35,7 @@ const ProductContext = ({ children }) => {
 
   //! GET_Product
   const getProducts = async () => {
-    const { data } = await axios(API);
+    const { data } = await axios(`${API}/${window.location.search}`);
     dispatch({
       type: ACTIONS.GET_PRODUCTS,
       payload: data,
@@ -80,6 +80,13 @@ const ProductContext = ({ children }) => {
     await axios.post(API_CATEGORIES, newCategory);
     getCategories();
   };
+  //! FILTER
+  const fetchByParams = (query, value) => {
+    const search = new URLSearchParams(window.location.search);
+    search.set(query, value);
+    const url = `${window.location.pathname}?${search}`;
+    navigate(url);
+  };
 
   const values = {
     addProduct,
@@ -92,6 +99,7 @@ const ProductContext = ({ children }) => {
     getCategories,
     createCategory,
     categories: state.categories,
+    fetchByParams,
   };
   return (
     <productContext.Provider value={values}>{children}</productContext.Provider>

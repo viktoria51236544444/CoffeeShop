@@ -25,7 +25,7 @@ const ProductCard = ({ elem }) => {
           <p>{elem.title}</p>
           <p>{elem.description}</p>
           <p>{elem.category}</p>
-          <p>${elem.price}</p>
+          <p>{elem.price}$</p>
         </div>
         <div>
           <button onClick={handleClick}>Delete</button>
