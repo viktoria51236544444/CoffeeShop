@@ -12,11 +12,14 @@ export const useCoffeeCart = () => useContext(coffeeCartContext);
 const INIT_STATE = {
   coffeeCart: JSON.parse(localStorage.getItem("coffeeCart")),
   coffeeCartLength: getProductsCountInCoffeeCart,
+  paymentInfo: null,
 };
 const reducer = (state = INIT_STATE, action) => {
   switch (action.type) {
     case ACTIONS.GET_COFFEE_CART:
       return { ...state, coffeeCart: action.payload };
+    case ACTIONS.SET_PAYMENT_INFO:
+      return { ...state, paymentInfo: action.payload };
     default:
       return state;
   }
@@ -116,6 +119,14 @@ const CartContext = ({ children }) => {
       payload: coffeeCart,
     });
   };
+
+  //! PAYMENT INFO
+  const setPaymentInfo = (paymentInfo) => {
+    dispatch({
+      type: ACTIONS.SET_PAYMENT_INFO,
+      payload: paymentInfo,
+    });
+  };
   const values = {
     coffeeCart: state.coffeeCart,
     getCoffeeCart,
@@ -124,6 +135,8 @@ const CartContext = ({ children }) => {
     changeProductCountInCoffeeCart,
     deleteProductInCoffeeCart,
     getProductsCountInCoffeeCart,
+    setPaymentInfo,
+    paymentInfo: state.paymentInfo,
   };
 
   return (
