@@ -4,12 +4,14 @@ import { useProducts } from "../../context/ProductContext";
 import "./product.scss";
 const EditProduct = () => {
   const { id } = useParams();
-  const { getOneProduct, oneProduct, editProduct } = useProducts();
+  const { getOneProduct, oneProduct, editProduct, categories, getCategories } =
+    useProducts();
   const [product, setProduct] = useState({
     title: "",
     description: "",
+    category: "",
     price: 0,
-    img: "",
+    image: "",
   });
   const handleInput = (e) => {
     if (e.target.name === "price") {
@@ -20,12 +22,16 @@ const EditProduct = () => {
       setProduct(obj);
     }
   };
-  const handleClick = () => {
+  const handleClick = (e) => {
     editProduct(id, product);
+    e.preventDefault();
   };
   useEffect(() => {
-    getOneProduct(id);
+    getCategories();
   }, []);
+  useEffect(() => {
+    getOneProduct(id);
+  }, [id]);
   useEffect(() => {
     if (oneProduct) {
       setProduct(oneProduct);
@@ -48,6 +54,19 @@ const EditProduct = () => {
         type="text"
         placeholder="Description"
       />
+      <select
+        value={product.category}
+        name="category"
+        id="categorySelect"
+        onChange={handleInput}
+      >
+        {categories.length > 0 &&
+          categories.map((category) => (
+            <option key={category.id} value={category.value}>
+              {category.name}
+            </option>
+          ))}
+      </select>
       <input
         value={product.price}
         onChange={handleInput}

@@ -16,7 +16,6 @@ const ProductContext = ({ children }) => {
     switch (action.type) {
       case ACTIONS.GET_PRODUCTS:
         return { ...state, products: action.payload };
-        return { ...state, products: action.payload };
 
       case ACTIONS.GET_ONE_PRODUCT:
         return { ...state, oneProduct: action.payload };
@@ -26,27 +25,18 @@ const ProductContext = ({ children }) => {
     }
   };
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
-  };
-  const [state, dispatch] = useReducer(reducer, INIT_STATE);
+
   //! CREATE
-  const addProduct = async (newProduct) => {
+
   const addProduct = async (newProduct) => {
     await axios.post(API, newProduct);
-    navigate("/products");
-  };
     navigate("/products");
   };
 
   //! GET_Product
   const getProducts = async () => {
-    const { data } = await axios(API);
-  const getProducts = async () => {
-    const { data } = await axios(API);
+    const { data } = await axios(`${API}/${window.location.search}`);
     dispatch({
-      type: ACTIONS.GET_PRODUCTS,
-      payload: data,
-    });
-  };
       type: ACTIONS.GET_PRODUCTS,
       payload: data,
     });
@@ -57,21 +47,13 @@ const ProductContext = ({ children }) => {
     await axios.delete(`${API}/${id}`);
     getProducts();
   };
-  const deleteProduct = async (id) => {
-    await axios.delete(`${API}/${id}`);
-    getProducts();
-  };
 
   // ! GET_One_Product
-  const getOneProduct = async (id) => {
-    const { data } = await axios(`${API}/${id}`);
   const getOneProduct = async (id) => {
     const { data } = await axios(`${API}/${id}`);
     dispatch({
       type: ACTIONS.GET_ONE_PRODUCT,
       payload: data,
-    });
-  };
     });
   };
 
@@ -97,6 +79,13 @@ const ProductContext = ({ children }) => {
     await axios.post(API_CATEGORIES, newCategory);
     getCategories();
   };
+  //! FILTER
+  const fetchByParams = (query, value) => {
+    const search = new URLSearchParams(window.location.search);
+    search.set(query, value);
+    const url = `${window.location.pathname}?${search}`;
+    navigate(url);
+  };
 
   const values = {
     addProduct,
@@ -109,9 +98,9 @@ const ProductContext = ({ children }) => {
     getCategories,
     createCategory,
     categories: state.categories,
+    fetchByParams,
   };
   return (
-    <productContext.Provider value={values}>{children}</productContext.Provider>
     <productContext.Provider value={values}>{children}</productContext.Provider>
   );
 };

@@ -34,8 +34,5 @@ const AdminPage = () => {
     </div>
   );
 };
-  );
-};
 
-export default AdminPage;
 export default AdminPage;

@@ -3,6 +3,8 @@
 body {
   overflow-x: hidden;
   /* background-color: #442318; */
+  background-color: #744f40;
+  /* background-color: #dabb9e; */
 }
 
 /* ! BAYANA Start MainContentBlock1 */
@@ -439,7 +441,6 @@ body {
 }
 /*! PAPULARMENU FINISH */
 
-
 /* ! Reviews Start Oxana */
 .review__container {
   padding: 241px 10px 142px;
@@ -848,4 +849,3 @@ body {
 }
 
 /*! styles finish */
-
