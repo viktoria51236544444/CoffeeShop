@@ -7,6 +7,7 @@ const App = () => {
     <div>
       <Navbar />
       <MainRoutes />
+      <Comments />
     </div>
   );
 };

@@ -2,9 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Andika&family=Dancing+Script&display=swap");
 body {
   overflow-x: hidden;
-  /* background-color: #442318; */
-  background-color: #744f40;
-  /* background-color: #dabb9e; */
+  background-color: #442318;
 }
 
 /* ! BAYANA Start MainContentBlock1 */
@@ -219,7 +217,7 @@ body {
 /* ! BAYANA FINISH MainContentBlock1 */
 
 body {
-  /* background-color: #221518; */
+  background-color: #221518;
   margin: 0;
 }
 /*? header start */
@@ -788,7 +786,7 @@ body {
 }
 
 /*! Menu finish */
-/*! styles start */
+/*! card styles start */
 
 .form_card {
   width: 300px;
@@ -848,4 +846,152 @@ body {
   }
 }
 
-/*! styles finish */
+/*! card styles finish */
+
+/*! comments components start */
+.lavazza {
+  display: flex;
+  margin-top: 5%;
+  margin-left: 10%;
+  font-family: Andika;
+  color: #f8e4be;
+}
+.block11 {
+  display: flex;
+  background-color: rgba(198, 195, 195, 0.1);
+  margin-left: 5%;
+  width: 515px;
+  margin-bottom: 8px;
+  gap: "50px";
+  border-radius: 5px;
+  border: 2px solid #f3d8a6;
+}
+.block12 {
+  display: flex;
+  background-color: rgba(198, 195, 195, 0.1);
+  margin-left: 5%;
+  width: 515px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  border: 2px solid #f3d8a6;
+}
+.block13 {
+  display: flex;
+  background-color: rgba(198, 195, 195, 0.1);
+  margin-left: 5%;
+  width: 515px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  border: 2px solid #f3d8a6;
+}
+.block14 {
+  display: flex;
+  background-color: rgba(198, 195, 195, 0.1);
+  margin-left: 5%;
+  width: 515px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  border: 2px solid #f3d8a6;
+}
+.block15 {
+  display: flex;
+  background-color: rgba(198, 195, 195, 0.1);
+  margin-left: 5%;
+  width: 515px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  border: 2px solid #f3d8a6;
+}
+.block16 {
+  display: flex;
+  background-color: rgba(198, 195, 195, 0.1);
+  margin-left: 5%;
+  width: 515px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  border: 2px solid #f3d8a6;
+}
+.lavazza__img {
+  border: 1px solid black;
+  width: 480px;
+  height: 485px;
+  text-align: center;
+  background-color: #f3d8a6;
+  border-radius: 10px;
+}
+.Lavazza__cold-p {
+  margin-top: -3.5%;
+  margin-left: 5%;
+  width: 515px;
+}
+.block17 {
+  width: 1005px;
+  height: 120px;
+  background-color: rgba(198, 195, 195, 0.1);
+  border-radius: 5px;
+  margin-left: 10%;
+  font-family: Andika;
+  color: #f8e4be;
+  padding: 10px;
+  margin-top: 1%;
+  border: 2px solid #f3d8a6;
+}
+.card__buy {
+  color: #f3d8a6;
+  background-color: rgba(198, 195, 195, 0.1);
+  border-radius: 5px;
+  width: 70px;
+  height: 30px;
+  margin-top: -10px;
+  margin-left: 3%;
+  border: none;
+  cursor: pointer;
+}
+.input__comments1 {
+  color: #f3d8a6;
+  background-color: rgba(198, 195, 195, 0.1);
+  width: 150px;
+  border: 1px solid #f3d8a6;
+  height: 20px;
+  font-family: Andika;
+}
+.input__comment2 {
+  color: #f3d8a6;
+  background-color: rgba(198, 195, 195, 0.1);
+  margin-top: 0.5%;
+  border: 1px solid #f3d8a6;
+  font-family: Andika;
+}
+.block__comments-p {
+  color: #f3d8a6;
+  font-family: Andika;
+  font-size: 20px;
+}
+.block_comments {
+  margin-left: 10%;
+  margin-top: 3%;
+}
+.submit_bottun {
+  color: #f3d8a6;
+  background-color: rgba(198, 195, 195, 0.1);
+  border-radius: 5px;
+  width: 150px;
+  height: 40px;
+  margin-top: 0.2%;
+  border: none;
+  cursor: pointer;
+  font-family: Andika;
+}
+.comments__p {
+  width: 890px;
+  height: 120px;
+  background-color: rgba(198, 195, 195, 0.1);
+  border-radius: 5px;
+  margin-left: 10%;
+  font-family: Andika;
+  color: #f8e4be;
+  padding: 10px;
+  margin-top: 1%;
+  border: 2px solid #f3d8a6;
+}
+/*! comments components finish */

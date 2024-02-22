@@ -31,6 +31,7 @@ const Navbar = () => {
               )}
             </div>
           </NavLink>
+          <button>связаться с нами</button>
         </div>
       </nav>
     </header>
