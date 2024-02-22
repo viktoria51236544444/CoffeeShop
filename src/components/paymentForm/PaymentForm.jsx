@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import { useCoffeeCart } from "../../context/CartContext";
-
 const PaymentForm = () => {
   const {
     coffeeCart,
     changeProductCountInCoffeeCart,
     deleteProductInCoffeeCart,
   } = useCoffeeCart();
-
-  // State for contact and delivery information
   const [contactInfo, setContactInfo] = useState({
     email: "",
     firstName: "",
@@ -21,8 +18,6 @@ const PaymentForm = () => {
     textMe: false,
     country: "",
   });
-
-  // State for billing information
   const [billingInfo, setBillingInfo] = useState({
     useShippingAddress: true,
     postalCode: "",
@@ -32,8 +27,6 @@ const PaymentForm = () => {
     billingLastName: "",
     billingPhone: "",
   });
-
-  // Handler for input change in contact and delivery section
   const handleContactInputChange = (e) => {
     const { name, value, type, checked } = e.target;
     const newValue = type === "checkbox" ? checked : value;
@@ -42,8 +35,6 @@ const PaymentForm = () => {
       [name]: newValue,
     });
   };
-
-  // Handler for input change in billing section
   const handleBillingInputChange = (e) => {
     const { name, value, type, checked } = e.target;
     const newValue = type === "checkbox" ? checked : value;
@@ -52,11 +43,8 @@ const PaymentForm = () => {
       [name]: newValue,
     });
   };
-
-  // Submit handler for the form
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here, such as submitting contact, delivery, and billing information
   };
 
   return (
@@ -65,7 +53,6 @@ const PaymentForm = () => {
         <div className="contact-delivery-section">
           <h2>Contact</h2>
           <form onSubmit={handleSubmit}>
-            {/* Contact information */}
             <input
               type="text"
               name="email"
@@ -74,14 +61,12 @@ const PaymentForm = () => {
               placeholder="Email"
               required
             />
-            {/* Add other contact inputs here */}
           </form>
         </div>
         <div className="cart-section">
           <div className="cart-container">
             {coffeeCart.products.map((elem) => (
               <div className="cart-item" key={elem.item.id}>
-                {/* Cart item details */}
                 <img
                   className="cart-item-image"
                   src={elem.item.img}

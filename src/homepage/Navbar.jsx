@@ -4,13 +4,16 @@ import registration from "./assets/mdi-light_account.png";
 import shoping from "./assets/ph_shopping-cart-light.png";
 import { NavLink } from "react-router-dom";
 import { useCoffeeCart } from "../context/CartContext";
+
 const Navbar = () => {
   const { addProductToCoffeeCart, getProductsCountInCoffeeCart } =
     useCoffeeCart();
   const [badgeCount, setBadgeCount] = useState(0);
+
   useEffect(() => {
     setBadgeCount(getProductsCountInCoffeeCart());
   }, [addProductToCoffeeCart]);
+
   return (
     <header>
       <nav className="nav">
@@ -23,7 +26,7 @@ const Navbar = () => {
             alt=""
           />
           <img className="nav__img" src={registration} alt="" />
-          <NavLink to={"/cart"}>
+          <NavLink to={"/cart"} className="cart-link">
             <div className="cart-container">
               <img className="nav__img cart shake" src={shoping} alt="" />
               {badgeCount > 0 && (

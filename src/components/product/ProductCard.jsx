@@ -1,5 +1,4 @@
 import React from "react";
-
 import { useProducts } from "../../context/ProductContext";
 import { useNavigate } from "react-router-dom";
 import "./product.scss";
@@ -7,15 +6,15 @@ import { useCoffeeCart } from "../../context/CartContext";
 
 const ProductCard = ({ elem }) => {
   const { deleteProduct } = useProducts();
-  const {
-    addProductToCoffeeCart,
-    checkProductInCoffeeCart,
-    deleteProductInCoffeeCart,
-  } = useCoffeeCart();
+  const { addProductToCoffeeCart, deleteProductInCoffeeCart } = useCoffeeCart();
   const navigate = useNavigate();
   const handleClick = () => {
     deleteProduct(elem.id);
     deleteProductInCoffeeCart(elem.id);
+  };
+  const handleAddToCart = () => {
+    addProductToCoffeeCart(elem);
+    alert("Confirm action: Product is in cart ");
   };
   return (
     <form className="form_card">
@@ -30,15 +29,7 @@ const ProductCard = ({ elem }) => {
         <div>
           <button onClick={handleClick}>Delete</button>
           <button onClick={() => navigate(`/edit/${elem.id}`)}>Edit</button>
-          <button
-            onClick={() => addProductToCoffeeCart(elem)}
-            sx={{
-              backgroundColor: checkProductInCoffeeCart(elem.id) ? "black" : "",
-              color: checkProductInCoffeeCart(elem.id) ? "white" : "",
-            }}
-          >
-            Добавить в корзину
-          </button>
+          <button onClick={handleAddToCart}>Add to cart</button>
         </div>
         <div
           style={{
