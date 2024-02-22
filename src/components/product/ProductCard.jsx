@@ -1,4 +1,3 @@
-
 import React from "react";
 
 import { useProducts } from "../../context/ProductContext";
@@ -57,6 +56,7 @@ const ProductCard = ({ elem }) => {
             src="https://svgsilh.com/svg/29435-ff9800.svg"
             alt=""
           />
+
           <img
             style={{
               width: "17%",

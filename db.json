@@ -15,6 +15,22 @@
       "category": "",
       "price": 3456,
       "img": "https://cdnimg.carepac.com/wp-content/uploads/2023/02/The-Bean-Coffee-Pouch-Bag-300x300.jpg"
+    },
+    {
+      "id": "652a",
+      "title": "Coffee",
+      "description": "Flavour ",
+      "category": "",
+      "price": 3456,
+      "img": "https://cdnimg.carepac.com/wp-content/uploads/2023/02/The-Bean-Coffee-Pouch-Bag-300x300.jpg"
+    },
+    {
+      "title": "Lavazza \"Gold Selection\"",
+      "description": "Кофе в зернах средней обжарки ",
+      "category": "",
+      "price": 200,
+      "img": "https://oe.kg/upload/resize_cache/iblock/ada/570_362_0/adac3cbf44e449efd02d1a94d9655c32.jpeg",
+      "id": "UPlPwqi"
     }
   ],
   "category": []
