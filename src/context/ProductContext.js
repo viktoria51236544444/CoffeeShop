@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useReducer } from "react";
-import { ACTIONS, API } from "../helpers/const";
+import { ACTIONS, API, API_CATEGORIES } from "../helpers/const";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 export const productContext = createContext();
@@ -10,16 +10,22 @@ const ProductContext = ({ children }) => {
   const INIT_STATE = {
     products: [],
     oneProduct: {},
+    categories: [],
   };
   const reducer = (state = INIT_STATE, action) => {
     switch (action.type) {
       case ACTIONS.GET_PRODUCTS:
         return { ...state, products: action.payload };
+        return { ...state, products: action.payload };
 
       case ACTIONS.GET_ONE_PRODUCT:
         return { ...state, oneProduct: action.payload };
+
+      case ACTIONS.GET_CATEGORIES:
+        return { ...state, categories: action.payload };
     }
   };
+
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
   //! CREATE
   const addProduct = async (newProduct) => {
@@ -58,6 +64,23 @@ const ProductContext = ({ children }) => {
   };
   //! лайки
 
+  //! -------------------CATEGORY--------------------
+
+  //!GET
+  const getCategories = async () => {
+    const { data } = await axios(API_CATEGORIES);
+    dispatch({
+      type: ACTIONS.GET_CATEGORIES,
+      payload: data,
+    });
+  };
+
+  //!CREATE
+  const createCategory = async (newCategory) => {
+    await axios.post(API_CATEGORIES, newCategory);
+    getCategories();
+  };
+
   const values = {
     addProduct,
     getProducts,
@@ -66,6 +89,9 @@ const ProductContext = ({ children }) => {
     getOneProduct,
     oneProduct: state.oneProduct,
     editProduct,
+    getCategories,
+    createCategory,
+    categories: state.categories,
   };
   return (
     <productContext.Provider value={values}>{children}</productContext.Provider>

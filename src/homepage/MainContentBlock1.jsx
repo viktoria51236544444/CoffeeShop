@@ -10,15 +10,16 @@ import Take from "./assets/MainContentBlock1/TakeAway.png";
 import Beans from "./assets/MainContentBlock1/Beans.png";
 import Pastry from "./assets/MainContentBlock1/Pastry.png";
 import Offer from "./assets/MainContentBlock1/offer.png";
-import Shop from "./assets/MainContentBlock1/shop.png";
 import LittleBean1 from "./assets/MainContentBlock1/littlebean1.png";
 import LittleBean2 from "./assets/MainContentBlock1/littlebean2.png";
 import Modal from "react-modal";
+import { useNavigate } from "react-router-dom";
 const MainContentBlock1 = () => {
   const [showMore, setShowMore] = useState(false);
   const toggleMore = () => {
     setShowMore(!showMore);
   };
+  const navigate = useNavigate();
   const [modalIsOpenEquipment, setModalIsOpenEquipment] = useState(false);
   const [modalIsOpenType, setModalIsOpenType] = useState(false);
   const [modalIsOpenTake, setModalIsOpenTake] = useState(false);
@@ -27,18 +28,23 @@ const MainContentBlock1 = () => {
 
   const openModalEquipment = () => {
     setModalIsOpenEquipment(true);
+    navigate("/products");
   };
   const openModalType = () => {
     setModalIsOpenType(true);
+    navigate("/products");
   };
   const openModalTake = () => {
     setModalIsOpenTake(true);
+    navigate("/menu");
   };
   const openModalBeansVariant = () => {
     setModalIsOpenBeansVariant(true);
+    navigate("/products");
   };
   const openModalPastry = () => {
     setModalIsOpenPastry(true);
+    navigate("/menu");
   };
   const closeModal = () => {
     setModalIsOpenEquipment(false);
@@ -68,7 +74,7 @@ const MainContentBlock1 = () => {
                 Offer A Variety Of Ethically Sourced Products To Tantalize Any
                 Customer’s Palate. For Those Looking For Unique Brewing
                 Equipment, Eliza Also Carries A Full Range Of Quality Espresso
-                Makers, Grinders, Brewers{" "}
+                Makers, Grinders, Brewers
                 {showMore && (
                   <span>
                     , French Presses And More. On Top Of All That, Their
@@ -472,7 +478,7 @@ const MainContentBlock1 = () => {
             Most Renowned Coffee Growing Regions In The World, Ensuring That
             Each Cup Is Unrivaled In Flavor And Freshness.
           </p>
-          <img src={Shop} alt="Shop" id="shop" />
+          <button className="shop-button__offer">Shop Now</button>
         </div>
         <div className="text__container-right">
           <img src={Offer} alt="Offer" />
