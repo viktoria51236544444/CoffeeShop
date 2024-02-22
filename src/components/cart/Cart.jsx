@@ -21,6 +21,18 @@ const Cart = () => {
           <p>{elem.item.description}</p>
           <p>{elem.item.category}</p>
           <p>${elem.item.price}</p>
+          <input
+            onChange={(e) =>
+              changeProductCountInCoffeeCart(elem.item.id, e.target.value)
+            }
+            type="number"
+            min={1}
+            max={20}
+            defaultValue={elem.count}
+          />
+          <button onClick={() => deleteProductInCoffeeCart(elem.item.id)}>
+            DELETE
+          </button>
         </div>
       ))}
     </div>
