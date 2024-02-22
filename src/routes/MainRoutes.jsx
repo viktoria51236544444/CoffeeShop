@@ -6,6 +6,7 @@ import ProductPage from "../pages/ProductPage";
 import Menu from "../homepage/Menu";
 import Cart from "../components/cart/Cart";
 import PaymentForm from "../components/paymentForm/PaymentForm";
+import Comments from "../homepage/Comments";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -15,6 +16,7 @@ const MainRoutes = () => {
     { id: 4, link: "/menu", element: <Menu /> },
     { id: 5, link: "/cart", element: <Cart /> },
     { id: 6, link: "/payment", element: <PaymentForm /> },
+    { id: 6, link: "/comments", element: <Comments /> },
   ];
   return (
     <Routes>
