@@ -62,6 +62,7 @@ const ProductContext = ({ children }) => {
     await axios.patch(`${API}/${id}`, editedProduct);
     navigate("/products");
   };
+  //! лайки
 
   //! -------------------CATEGORY--------------------
 

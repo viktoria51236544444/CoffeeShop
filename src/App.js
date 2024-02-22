@@ -26,6 +26,7 @@ const App = () => {
       <Subscribe />
       <Footer /> */}
       <MainRoutes />
+      <Comments />
     </div>
   );
 };
