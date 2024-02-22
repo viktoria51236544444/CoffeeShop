@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import images from "./recomendedImages";
 import { motion } from "framer-motion";
+import "./aidana.scss";
 
 const Recomended = () => {
   const [width, setWidth] = useState(0);

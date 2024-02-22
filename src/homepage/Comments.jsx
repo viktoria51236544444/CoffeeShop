@@ -55,59 +55,59 @@ const Comments = () => {
         <div>
           <div className="Lavazza__cold-p">
             <p>
-              Кофе в зернах Lavazza "Gold Selection", средней обжарки, 1000 гр
+              Coffee beans Lavazza "Gold Selection", medium roast, 1000 gr
               <hr />
             </p>
             <div style={{ display: "flex" }}>
-              <p style={{ marginTop: "-2%" }}>Цена: $200</p>
+              <p style={{ marginTop: "-2%" }}>Price: $200.</p>
               <button onClick={handledClick} className="card__buy">
-                Купить
+                Buy
               </button>
             </div>
           </div>
           <div>
             <div className="block11">
-              <p style={{ marginLeft: "12%" }}>Бренд:</p>
+              <p style={{ marginLeft: "12%" }}>Brand::</p>
               <p style={{ marginLeft: "24%" }}>Lavazza</p>
             </div>
             <div className="block12">
-              <p style={{ marginLeft: "12%" }}>Вес:</p>
-              <p style={{ marginLeft: "28%" }}>1кг</p>
+              <p style={{ marginLeft: "12%" }}>Weight:</p>
+              <p style={{ marginLeft: "23%" }}>1kg</p>
             </div>
             <div className="block13">
-              <p style={{ marginLeft: "12%" }}>Вид упаковки:</p>
-              <p style={{ marginLeft: "13%" }}>Вакуумная упаковка</p>
+              <p style={{ marginLeft: "12%" }}>Type of packaging::</p>
+              <p style={{ marginLeft: "7%" }}>Vacuum packaging</p>
             </div>
             <div className="block14">
-              <p style={{ marginLeft: "12%" }}>Сорт зерна:</p>
-              <p style={{ marginLeft: "16.5%" }}>70% Арабика, 30% Робуста</p>
+              <p style={{ marginLeft: "12%" }}>Grain variety::</p>
+              <p style={{ marginLeft: "14%" }}>70% Arabica, 30% Robusta</p>
             </div>
             <div className="block15">
-              <p style={{ marginLeft: "12%" }}>Степень обжарки:</p>
-              <p style={{ marginLeft: "8%" }}>Средняя</p>
+              <p style={{ marginLeft: "12%" }}>Degree of roasting::</p>
+              <p style={{ marginLeft: "7%" }}>Medium</p>
             </div>
             <div className="block16">
-              <p style={{ marginLeft: "12%" }}>Страна производства:</p>
-              <p style={{ marginLeft: "3%" }}>Италия</p>
+              <p style={{ marginLeft: "12%" }}>Country of manufacture:</p>
+              <p style={{ marginLeft: "2%" }}>Italy</p>
             </div>
           </div>
         </div>
       </div>
       <div className="block17">
-        <p>Описание:</p>
+        <p>Description:</p>
         <p>
-          Превосходная смесь отборной бразильской Арабики со сладковатым
-          привкусом и нежными оттенками меда и миндаля. Собран из лучших зерен
-          Робусты с азиатских и центрально-американских плантаций.
+          A superb blend of selected Brazilian Arabica with a sweet flavor and
+          delicate hints of honey and almonds. Harvested from the finest Robusta
+          beans from Asian and Central American plantations.
         </p>
       </div>
       <div className="block_comments">
-        <p className="block__comments-p">Отзывы:</p>
+        <p className="block__comments-p">Testimonials:</p>
         <div className="input__comments">
           <div>
             <input
               type="text"
-              placeholder="Имя"
+              placeholder="Name"
               className="input__comments1"
               value={name}
               onChange={handleNameChange}
@@ -116,7 +116,7 @@ const Comments = () => {
           <div>
             <textarea
               className="input__comment2"
-              placeholder="Введите ваш отзыв"
+              placeholder="Enter your review"
               value={comment}
               onChange={handleCommentChange}
               rows="4"
@@ -124,7 +124,7 @@ const Comments = () => {
             ></textarea>
           </div>
           <button className="submit_bottun" onClick={handleSubmit}>
-            Отправить отзыв
+            Submit Review
           </button>
         </div>
         <div>
