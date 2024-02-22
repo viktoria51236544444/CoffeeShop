@@ -2,13 +2,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Andika&family=Dancing+Script&display=swap");
 body {
   overflow-x: hidden;
-  /* background-color: #442318; */
+  background-color: #442318;
 }
 
 /* ! BAYANA Start MainContentBlock1 */
 .story__container {
   display: flex;
-  margin-top: 50px;
+  margin-top: 80px;
   margin-left: 90px;
   width: 87%;
   height: 378px;
@@ -113,6 +113,24 @@ body {
   );
   background-color: rgba(173, 113, 74, 0.35);
 }
+.shop-button__offer {
+  background-color: rgb(69, 49, 41);
+  color: rgb(248, 228, 190, 1);
+  width: 170px;
+  height: 55px;
+  border-radius: 49px;
+  border: 2px solid rgb(248, 228, 190, 1);
+  font-size: 24px;
+  font-family: Andika;
+  margin-left: 14%;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 50px;
+  cursor: pointer;
+}
+.shop-button__offer:hover {
+  background-color: #dabb9e;
+}
 .text__container {
   margin-left: 30px;
   text-align: justify;
@@ -147,7 +165,7 @@ body {
   margin-left: 7%;
 }
 .text__container-right img {
-  margin-left: 50%;
+  margin-left: 26%;
 }
 .text__container img {
   margin-left: 7%;
@@ -180,7 +198,6 @@ body {
   background-size: cover;
   padding: 20px;
   border-radius: 10px;
-  /* z-index: 1000; */
 }
 
 .Overlay {
@@ -190,7 +207,6 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
 }
 
 .ModalContent {
@@ -212,6 +228,99 @@ body {
 
 .ModalButton:hover {
   transform: scale(1.1);
+}
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-item {
+  display: flex;
+  gap: 20px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cart-item-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.cart-item-description {
+  font-size: 16px;
+}
+
+.cart-item-category {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.cart-item-price {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.cart-item-input {
+  width: 50px;
+  padding: 5px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.cart-item-delete {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-item-delete:hover {
+  background-color: #c82333;
+}
+
+.payment-form {
+  margin: 20px;
+}
+
+.input-field {
+  display: block;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
 }
 
 /* ! BAYANA FINISH MainContentBlock1 */
