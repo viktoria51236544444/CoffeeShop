@@ -11,6 +11,7 @@ import Header from "./homepage/Header";
 import MainContentBlock1 from "./homepage/MainContentBlock1";
 import Cart from "./components/cart/Cart";
 import PapularMenu from "./homepage/PapularMenu";
+import Comments from "./homepage/Comments";
 
 const App = () => {
   return (
