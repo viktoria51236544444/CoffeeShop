@@ -3,7 +3,13 @@
 body {
   overflow-x: hidden;
   background-color: #442318;
+  margin: 0;
 }
+
+/* body {
+  background-color: #221518;
+  margin: 0;
+} */
 
 /* ! BAYANA Start MainContentBlock1 */
 .story__container {
@@ -216,10 +222,6 @@ body {
 
 /* ! BAYANA FINISH MainContentBlock1 */
 
-body {
-  background-color: #221518;
-  margin: 0;
-}
 /*? header start */
 .nav {
   display: flex;

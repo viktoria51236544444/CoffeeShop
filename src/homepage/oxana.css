@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Andika&family=Dancing+Script&display=swap");
+/* body {
+  overflow-x: hidden;
+  background-color: #442318;
+} */
+
 /* ! Reviews Start Oxana */
 .review__container {
   padding: 241px 10px 142px;
@@ -253,6 +260,8 @@
 }
 
 .input-icon .icon-img {
+  /* width: 5%;
+  height: 10%; */
   position: absolute;
   left: 10px; /* Расположение изображения относительно родительского контейнера */
   top: 50%; /* Расположение изображения относительно родительского контейнера */
