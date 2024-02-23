@@ -4,7 +4,8 @@ import "./product.scss";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
 const SideBar = () => {
-  const { categories, getCategories, fetchByParams } = useProducts();
+  const { categories, getCategories, fetchByParams, getProducts } =
+    useProducts();
   const [searchParams, setSearchParams] = useSearchParams();
   console.log(searchParams);
   const [search, setSearch] = useState(searchParams.get("q") || "");
@@ -13,6 +14,7 @@ const SideBar = () => {
     setSearchParams({
       q: search,
     });
+    getProducts();
   }, [search]);
   useEffect(() => {
     getCategories();
@@ -21,6 +23,13 @@ const SideBar = () => {
   return (
     <div>
       <form className="categories_side">
+        <input
+          type="search"
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
+        />
+        ;
         {categories.map((elem) => (
           <button
             type="button"
@@ -36,26 +45,3 @@ const SideBar = () => {
 };
 
 export default SideBar;
-// import React, { useEffect, useState } from "react";
-// import "./product.scss";
-
-// const SideBar = () => {
-//   const [isOpen, setIsOpen] = useState(false);
-
-//   const toggleMenu = () => {
-//     setIsOpen(!isOpen);
-//   };
-//   return (
-//     <div
-//       className={`burger-menu ${isOpen ? "clicked" : "unclicked"}`}
-//       onClick={toggleMenu}
-//     >
-//       <div className="burger-bar"></div>
-//       <div className="burger-bar"></div>
-//       <div className="burger-bar"></div>
-//       <div className={`menu ${isOpen ? "visible" : "hidden"}`}></div>
-//     </div>
-//   );
-// };
-
-// export default SideBar;

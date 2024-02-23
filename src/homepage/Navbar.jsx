@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import logo from "./assets/logo (1).png";
 import registration from "./assets/mdi-light_account.png";
 import shoping from "./assets/ph_shopping-cart-light.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useSearchParams } from "react-router-dom";
 import { useCoffeeCart } from "../context/CartContext";
+import { useProducts } from "../context/ProductContext";
 const Navbar = () => {
   const { addProductToCoffeeCart, getProductsCountInCoffeeCart } =
     useCoffeeCart();
@@ -11,6 +12,7 @@ const Navbar = () => {
   useEffect(() => {
     setBadgeCount(getProductsCountInCoffeeCart());
   }, [addProductToCoffeeCart]);
+
   return (
     <header>
       <nav className="nav">
