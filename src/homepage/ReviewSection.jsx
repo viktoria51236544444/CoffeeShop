@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import "./oxana.css";
 import bg from "../homepage/assets/review-img/customer-review-BG.png";
 import beanbig from "../homepage/assets/review-img/review-bean-big.png";
 import beantop from "../homepage/assets/review-img/review-bean-top.png";

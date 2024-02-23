@@ -5,14 +5,12 @@ import { useSearchParams } from "react-router-dom";
 import Pagination from "./Pagination";
 
 const ProductList = () => {
+  //! SEARCH
   const { getProducts, products } = useProducts();
-  useEffect(() => {
-    getProducts();
-  }, []);
-
   const [searchParams, setSearchParams] = useSearchParams();
   useEffect(() => {
     getProducts();
+    setPage(1);
   }, [searchParams]);
 
   //! PAGINATION
