@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { useProducts } from "../../context/ProductContext";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./product.scss";
 import { useCoffeeCart } from "../../context/CartContext";
+import Like from "./img/another like.svg";
 
 const ProductCard = ({ elem }) => {
-  const { deleteProduct } = useProducts();
+  const { deleteProduct, plusLikeCoffee } = useProducts();
+  const [isCoffeeLike, setIsCoffeeLike] = useState(false);
   const { addProductToCoffeeCart, deleteProductInCoffeeCart } = useCoffeeCart();
   const navigate = useNavigate();
   const handleClick = () => {
@@ -15,6 +17,12 @@ const ProductCard = ({ elem }) => {
   const handleAddToCart = () => {
     addProductToCoffeeCart(elem);
     alert("Confirm action: Product is in cart ");
+  };
+  const handleLikeClick = () => {
+    setIsCoffeeLike(true);
+  };
+  const handleLikeCoffeeClick = () => {
+    plusLikeCoffee();
   };
   return (
     <form className="form_card">
@@ -56,8 +64,14 @@ const ProductCard = ({ elem }) => {
               height: "15%",
               cursor: "pointer",
             }}
-            src="https://svgsilh.com/svg/2438744-ff9800.svg"
+            src={
+              isCoffeeLike ? Like : "https://svgsilh.com/svg/2438744-ff9800.svg"
+            }
             alt=""
+            onClick={() => {
+              handleLikeClick();
+              handleLikeCoffeeClick();
+            }}
           />
         </div>
       </div>
