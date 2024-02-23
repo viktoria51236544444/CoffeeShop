@@ -16,7 +16,7 @@ const MainRoutes = () => {
     { id: 4, link: "/menu", element: <Menu /> },
     { id: 5, link: "/cart", element: <Cart /> },
     { id: 6, link: "/payment", element: <PaymentForm /> },
-    { id: 6, link: "/comments", element: <Comments /> },
+    { id: 7, link: "/comments", element: <Comments /> },
   ];
   return (
     <Routes>
