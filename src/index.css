@@ -785,4 +785,10 @@ body {
   margin-top: 1%;
   border: 2px solid #f3d8a6;
 }
+.img__big-bean {
+  position: absolute;
+  z-index: -1;
+  width: 1000px;
+  height: 1000px;
+}
 /*! comments components finish */
