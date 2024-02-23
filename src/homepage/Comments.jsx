@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { useCoffeeCart } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
-
+import left from "./assets/menu-img/left-bean-big.png";
 const Comments = () => {
   const navigate = useNavigate();
+
   const handledClick = () => {
     navigate("/products");
   };
+
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
   const [commentsList, setCommentsList] = useState([]);
+  const [replyIndex, setReplyIndex] = useState(null);
+  const [replyName, setReplyName] = useState("");
+  const [replyComment, setReplyComment] = useState("");
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -35,6 +39,70 @@ const Comments = () => {
     setComment("");
   };
 
+  const handleDelete = (commentIndex, replyIndex) => {
+    if (replyIndex !== undefined) {
+      const updatedReplies = [...commentsList[commentIndex].replies];
+      updatedReplies.splice(replyIndex, 1);
+
+      const updatedCommentsList = [...commentsList];
+      updatedCommentsList[commentIndex].replies = updatedReplies;
+
+      setCommentsList(updatedCommentsList);
+    } else {
+      const updatedCommentsList = [...commentsList];
+      updatedCommentsList.splice(commentIndex, 1);
+      setCommentsList(updatedCommentsList);
+    }
+
+    localStorage.setItem("comments", JSON.stringify(commentsList));
+  };
+
+  const handleReply = (commentIndex) => {
+    setReplyIndex(commentIndex);
+    setReplyName("");
+    setReplyComment(`Answered(a) ${commentsList[commentIndex].name}`);
+  };
+
+  const handleCancelReply = () => {
+    setReplyIndex(null);
+    setReplyName("");
+    setReplyComment("");
+  };
+
+  const handleReplyNameChange = (event) => {
+    setReplyName(event.target.value);
+  };
+
+  const handleReplyCommentChange = (event) => {
+    setReplyComment(event.target.value);
+  };
+
+  const handleSubmitReply = (commentIndex) => {
+    if (replyName.trim() === "" || replyComment.trim() === "") {
+      alert("Заполните все поля!");
+      return;
+    }
+
+    const repliedComment = {
+      name: replyName,
+      comment: replyComment,
+      replyInfo: "",
+    };
+    const repliedName = commentsList[commentIndex].name;
+    repliedComment.replyInfo = `Answered(a) ${repliedName}`;
+
+    const updatedCommentsList = [...commentsList];
+    updatedCommentsList[commentIndex].replies =
+      updatedCommentsList[commentIndex].replies || [];
+    updatedCommentsList[commentIndex].replies.push(repliedComment);
+
+    setCommentsList(updatedCommentsList);
+    localStorage.setItem("comments", JSON.stringify(updatedCommentsList));
+
+    setReplyName("");
+    handleCancelReply();
+  };
+
   useEffect(() => {
     const storedComments = localStorage.getItem("comments");
     if (storedComments) {
@@ -44,6 +112,7 @@ const Comments = () => {
 
   return (
     <div style={{ marginLeft: "7%" }}>
+      <img className="img__big-bean" src={left} alt="" />
       <div className="lavazza">
         <div className="lavazza__img">
           <img
@@ -93,6 +162,7 @@ const Comments = () => {
           </div>
         </div>
       </div>
+      ;
       <div className="block17">
         <p>Description:</p>
         <p>
@@ -119,7 +189,7 @@ const Comments = () => {
               placeholder="Enter your review"
               value={comment}
               onChange={handleCommentChange}
-              rows="4"
+              rows="5"
               cols="50"
             ></textarea>
           </div>
@@ -128,10 +198,94 @@ const Comments = () => {
           </button>
         </div>
         <div>
-          {commentsList.map((item, index) => (
-            <div className="comments__p" key={index}>
-              <p>{item.name}</p>
-              <p>{item.comment}</p>
+          {commentsList.map((item, commentIndex) => (
+            <div key={commentIndex}>
+              <div className="comments__p">
+                <p>
+                  {item.name} {item.replyInfo}
+                </p>
+                <p>{item.comment}</p>
+              </div>
+              <button
+                style={{
+                  height: "50px",
+                  width: "150px",
+                  marginLeft: "10%",
+                }}
+                className="submit_bottun"
+                onClick={() => handleDelete(commentIndex)}
+              >
+                Delete comment
+              </button>
+              <button
+                style={{
+                  height: "50px",
+                  width: "150px",
+                  marginLeft: "1%",
+                  marginTop: "0.3%",
+                }}
+                className="submit_bottun"
+                onClick={() => handleReply(commentIndex)}
+              >
+                Reply to comment
+              </button>
+              {replyIndex === commentIndex && (
+                <div className="input__comments">
+                  <div>
+                    <input
+                      style={{ marginTop: "1%" }}
+                      type="text"
+                      placeholder="Name"
+                      className="input__comments1"
+                      value={replyName}
+                      onChange={handleReplyNameChange}
+                    />
+                  </div>
+                  <div>
+                    <textarea
+                      style={{ marginTop: "0.5%" }}
+                      className="input__comment2"
+                      placeholder="Enter your answer"
+                      onChange={handleReplyCommentChange}
+                      rows="4"
+                      cols="50"
+                    ></textarea>
+                  </div>
+                  <button
+                    style={{ marginLeft: "20px" }}
+                    className="submit_bottun"
+                    onClick={() => handleSubmitReply(commentIndex)}
+                  >
+                    Send reply
+                  </button>
+                  <button
+                    style={{ marginLeft: "20px" }}
+                    className="submit_bottun"
+                    onClick={handleCancelReply}
+                  >
+                    Cancel reply
+                  </button>
+                </div>
+              )}
+              {item.replies && (
+                <div style={{ marginLeft: "10%", marginBottom: "4.5%" }}>
+                  {item.replies.map((reply, replyIndex) => (
+                    <div key={replyIndex} className="comments__p reply">
+                      <p style={{ fontSize: "13px" }}>
+                        {reply.name} {reply.replyInfo}
+                      </p>
+                      <p>{reply.comment}</p>
+                      <button
+                        style={{ marginLeft: "-1.3%", marginTop: "-0.7%" }}
+                        className="submit_bottun"
+                        onClick={() => handleDelete(commentIndex, replyIndex)}
+                      >
+                        Delete reply
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -139,5 +293,4 @@ const Comments = () => {
     </div>
   );
 };
-
 export default Comments;

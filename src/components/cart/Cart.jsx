@@ -36,6 +36,7 @@ const Cart = () => {
               onChange={(e) =>
                 changeProductCountInCoffeeCart(elem.item.id, e.target.value)
               }
+              я
               type="number"
               min={1}
               max={20}

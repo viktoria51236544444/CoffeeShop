@@ -93,6 +93,7 @@ const ProductContext = ({ children }) => {
     search.set(query, value);
     const url = `${window.location.pathname}?${search}`;
     navigate(url);
+    getProducts();
   };
 
   const values = {
