@@ -6,17 +6,19 @@ import Footer from "./homepage/Footer";
 import ReserveTable from "./homepage/ReserveTable";
 import Recomended from "./homepage/Recomended";
 import ReviewSection from "./homepage/ReviewSection";
+import Navbar from "./homepage/Navbar";
 
 const App = () => {
   return (
     <div>
+      {/* <Navbar />
       <OurBlog />
       <ReserveTable />
 
       <Recomended />
       <ReviewSection />
       <Subscribe />
-      <Footer />
+      <Footer /> */}
 
       <MainRoutes />
     </div>

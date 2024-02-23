@@ -9,7 +9,11 @@ const MainRoutes = () => {
     { id: 1, link: "/edit", element: <EditPage /> },
     { id: 2, link: "/admin", element: <AdminPage /> },
     { id: 3, link: "/products", element: <ProductList /> },
+    // { id: 4, link: "/register", element: <RegistrationForm /> },
+    // { id: 5, link: "/login", element: <LoginForm /> },
+    // { id: 6, link: "/confirm-email", element: <ConfirmEmail /> },
   ];
+
   return (
     <Routes>
       {PUBLIC_ROUTES.map((elem) => (
