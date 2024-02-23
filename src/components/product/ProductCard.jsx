@@ -1,7 +1,7 @@
 import React from "react";
 
 import { useProducts } from "../../context/ProductContext";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./product.scss";
 import { useCoffeeCart } from "../../context/CartContext";
 
@@ -25,7 +25,7 @@ const ProductCard = ({ elem }) => {
           <p>{elem.title}</p>
           <p>{elem.description}</p>
           <p>{elem.category}</p>
-          <p>${elem.price}</p>
+          <p>{elem.price}$</p>
         </div>
         <div>
           <button onClick={handleClick}>Delete</button>
@@ -43,23 +43,26 @@ const ProductCard = ({ elem }) => {
         <div
           style={{
             display: "flex",
-            justifyContent: "space-around",
+            justifyContent: "space-evenly",
             alignItems: "center",
+            marginLeft: "-40%",
           }}
         >
+          <NavLink to={"/comments"}>
+            <img
+              style={{
+                width: "13%",
+                height: "13%",
+                cursor: "pointer",
+              }}
+              src="https://svgsilh.com/svg/29435-ff9800.svg"
+              alt=""
+            />
+          </NavLink>
           <img
             style={{
               width: "15%",
               height: "15%",
-              cursor: "pointer",
-            }}
-            src="https://svgsilh.com/svg/29435-ff9800.svg"
-            alt=""
-          />
-          <img
-            style={{
-              width: "17%",
-              height: "17%",
               cursor: "pointer",
             }}
             src="https://svgsilh.com/svg/2438744-ff9800.svg"
