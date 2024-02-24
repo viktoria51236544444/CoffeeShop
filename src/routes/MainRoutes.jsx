@@ -20,7 +20,7 @@ const MainRoutes = () => {
     { id: 7, link: "/comments", element: <Comments /> },
     // { id: 8, link: "/login", element: <Comments /> },
     // { id: 9, link: "/register", element: <Comments /> },
-    { id: 10, link: "/", element: <Homepage /> },
+    { id: 8, link: "/", element: <Homepage /> },
   ];
 
   return (

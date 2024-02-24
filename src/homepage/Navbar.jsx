@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import logo from "./assets/logo (1).png";
 import registration from "./assets/mdi-light_account.png";
 import shoping from "./assets/ph_shopping-cart-light.png";
-import { NavLink, useSearchParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useCoffeeCart } from "../context/CartContext";
 import { useProducts } from "../context/ProductContext";
 import { Badge, IconButton } from "@mui/material";
@@ -11,16 +11,16 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 const Navbar = () => {
   const { addProductToCoffeeCart, getProductsCountInCoffeeCart } =
     useCoffeeCart();
-  const { likeCoffee } = useProducts();
+  const { likeCoffee, plusLikeCoffee } = useProducts();
   const [badgeCount, setBadgeCount] = useState(0);
 
   useEffect(() => {
     setBadgeCount(getProductsCountInCoffeeCart());
   }, [addProductToCoffeeCart]);
 
-  // const handleLikeClick = () => {
-  //   plusLikeCoffee();
-  // };
+  const handleLikeClick = () => {
+    plusLikeCoffee();
+  };
 
   return (
     <header>
@@ -33,13 +33,7 @@ const Navbar = () => {
             </Badge>
           </IconButton>
           <img className="nav__img" src={registration} alt="" />
-          <NavLink to={"/cart"} className="cart-link">
-          <img
-            className="nav__img"
-            style={{ width: "35px", height: "35px", marginTop: "-3px" }}
-            src="https://svgsilh.com/svg/2438744-ff9800.svg"
-            alt=""
-          />
+
           <NavLink>
             <img className="nav__img" src={registration} alt="" />
           </NavLink>
