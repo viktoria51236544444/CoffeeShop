@@ -2,44 +2,45 @@ import React, { useEffect, useState } from "react";
 import logo from "./assets/logo (1).png";
 import registration from "./assets/mdi-light_account.png";
 import shoping from "./assets/ph_shopping-cart-light.png";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate, useSearchParams } from "react-router-dom";
 import { useCoffeeCart } from "../context/CartContext";
 import { useProducts } from "../context/ProductContext";
 import { Badge, IconButton } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-
 import SearchIcon from "@mui/icons-material/Search";
 import "./aidana.scss";
+import { useLike } from "../context/LikeContext";
+
 const Navbar = () => {
   const { categories, getCategories, fetchByParams, getProducts } =
     useProducts();
   const [searchParams, setSearchParams] = useSearchParams();
-  console.log(searchParams);
   const [search, setSearch] = useState(searchParams.get("q") || "");
-  const navigate = useNavigate;
+  const navigate = useNavigate();
+
   useEffect(() => {
     setSearchParams({
       q: search,
     });
     getProducts();
   }, [search]);
+
   useEffect(() => {
     getCategories();
   }, []);
 
   const { addProductToCoffeeCart, getProductsCountInCoffeeCart } =
     useCoffeeCart();
-  const { likeCoffee, plusLikeCoffee } = useProducts();
   const [badgeCount, setBadgeCount] = useState(0);
 
   useEffect(() => {
     setBadgeCount(getProductsCountInCoffeeCart());
   }, [addProductToCoffeeCart]);
 
-  const handleLikeClick = () => {
-    plusLikeCoffee();
-  };
   const [isActive, setIsActive] = useState(false);
+  const { likeCoffee } = useLike();
+
+  const likeCount = Array.isArray(likeCoffee) ? likeCoffee.length : 0;
 
   return (
     <header>
@@ -56,12 +57,17 @@ const Navbar = () => {
               }}
             />
           </div>
-
-          <IconButton size="large" color="inherit">
-            <Badge badgeContent={likeCoffee} color="success">
-              <FavoriteIcon />
-            </Badge>
-          </IconButton>
+          <NavLink to={"/like"}>
+            <IconButton
+              size="large"
+              color="inherit"
+              className="like-icon-button"
+            >
+              <Badge badgeContent={likeCount}>
+                <FavoriteIcon color="error" />
+              </Badge>
+            </IconButton>
+          </NavLink>
           <img className="nav__img" src={registration} alt="" />
 
           <NavLink>

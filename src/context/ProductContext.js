@@ -11,7 +11,6 @@ const ProductContext = ({ children }) => {
     products: [],
     oneProduct: {},
     categories: [],
-    likeCoffee: 0,
   };
   const reducer = (state = INIT_STATE, action) => {
     switch (action.type) {
@@ -23,8 +22,6 @@ const ProductContext = ({ children }) => {
 
       case ACTIONS.GET_CATEGORIES:
         return { ...state, categories: action.payload };
-      case ACTIONS.PLUS_LIKE_COFFEE:
-        return { ...state, likeCoffee: state.likeCoffee + 1 };
       default:
         return state;
     }
@@ -68,9 +65,9 @@ const ProductContext = ({ children }) => {
     navigate("/products");
   };
   //! лайки
-  const plusLikeCoffee = () => {
-    dispatch({ type: ACTIONS.PLUS_LIKE_COFFEE });
-  };
+  // const plusLikeCoffee = () => {
+  //   dispatch({ type: ACTIONS.PLUS_LIKE_COFFEE });
+  // };
   //! -------------------CATEGORY--------------------
 
   //!GET
@@ -108,7 +105,6 @@ const ProductContext = ({ children }) => {
     createCategory,
     categories: state.categories,
     fetchByParams,
-    plusLikeCoffee,
   };
   return (
     <productContext.Provider value={values}>{children}</productContext.Provider>

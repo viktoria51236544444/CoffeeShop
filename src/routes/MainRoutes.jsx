@@ -4,10 +4,12 @@ import AdminPage from "../pages/AdminPage";
 import EditPage from "../pages/EditPage";
 import ProductPage from "../pages/ProductPage";
 import Menu from "../homepage/Menu";
-import Cart from "../components/cart/Cart";
+
 import PaymentForm from "../components/paymentForm/PaymentForm";
 import Comments from "../homepage/Comments";
 import Homepage from "../pages/Homepage";
+import Navbar from "../homepage/Navbar";
+import CartPage from "../pages/CartPage";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -15,12 +17,11 @@ const MainRoutes = () => {
     { id: 2, link: "/admin", element: <AdminPage /> },
     { id: 3, link: "/products", element: <ProductPage /> },
     { id: 4, link: "/menu", element: <Menu /> },
-    { id: 5, link: "/cart", element: <Cart /> },
+    { id: 5, link: "/cart", element: <CartPage /> },
     { id: 6, link: "/payment", element: <PaymentForm /> },
     { id: 7, link: "/comments", element: <Comments /> },
-    // { id: 8, link: "/login", element: <Comments /> },
-    // { id: 9, link: "/register", element: <Comments /> },
-    { id: 8, link: "/", element: <Homepage /> },
+    { id: 8, link: "/home", element: <Homepage /> },
+    { id: 9, link: "/", element: <Navbar /> },
   ];
 
   return (
