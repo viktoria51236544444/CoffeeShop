@@ -58,7 +58,7 @@ const SideBar = () => {
   const { categories, getCategories, fetchByParams, getProducts } =
     useProducts();
   const [searchParams, setSearchParams] = useSearchParams();
-  console.log(searchParams);
+  // console.log(searchParams);
   const [search, setSearch] = useState(searchParams.get("q") || "");
   const navigate = useNavigate;
   useEffect(() => {
