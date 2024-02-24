@@ -21,16 +21,20 @@ const Cart = () => {
   };
 
   return (
-    <form className="form_card">
-      <div className="card_content">
+    <form>
+      <div style={{ display: "inline-block" }} className="card_content">
         {coffeeCart.products.map((elem) => (
-          <div className="cart-item" key={elem.item.id}>
+          <div
+            style={{ borderRadius: "50px" }}
+            className="form_card"
+            key={elem.item.id}
+          >
             <img
-              className="cart-item-image"
+              style={{ width: "300px", height: "300px" }}
               src={elem.item.img || coffeeIcon}
               alt=""
             />
-            <div className="cart-item-details">
+            <div>
               <div className="cart-item-info">
                 <p className="cart-item-title">{elem.item.title}</p>
                 <p className="cart-item-description">{elem.item.description}</p>
