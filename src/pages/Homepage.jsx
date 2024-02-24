@@ -13,7 +13,6 @@ import Footer from "../homepage/Footer";
 const Homepage = () => {
   return (
     <div>
-      <Navbar />
       <Header />
       <MainContentBlock1 />
       <ReserveTable />

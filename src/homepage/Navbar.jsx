@@ -86,11 +86,14 @@ const Navbar = () => {
   };
 
   return (
-    <header>
-      <nav className="nav">
+    <div style={{ position: "absolute", zIndex: "1" }}>
+      <nav style={{ marginLeft: "-8%" }} className="nav">
         <img className="nav__logo" src={logo} alt="" />
         <div className="nav-div">
-          <div onClick={(e) => setIsActive(!isActive)}>
+          <div
+            style={{ marginLeft: "-200%" }}
+            onClick={(e) => setIsActive(!isActive)}
+          >
             <SearchIcon
               sx={{
                 color: "#f7e5da",
@@ -100,7 +103,13 @@ const Navbar = () => {
               }}
             />
           </div>
-          <IconButton size="large" color="inherit" className="like-icon-button">
+
+          <IconButton
+            sx={{ marginTop: "-5%" }}
+            size="large"
+            color="inherit"
+            className="like-icon-button"
+          >
             <Badge badgeContent={likeCount}>
               <FavoriteIcon color="error" />
             </Badge>
@@ -121,7 +130,7 @@ const Navbar = () => {
             </div>
           </NavLink>
         </div>
-        <div className="nav_menu_">
+        <div style={{ marginLeft: "-60%" }} className="nav_menu_">
           <div>
             <Link style={{ textDecorationLine: "none" }} to={"/"}>
               <span>Home</span>
@@ -160,7 +169,7 @@ const Navbar = () => {
         </div>
       )}
       ;
-    </header>
+    </div>
   );
 };
 
