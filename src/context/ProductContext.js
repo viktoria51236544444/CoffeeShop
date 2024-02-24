@@ -22,6 +22,8 @@ const ProductContext = ({ children }) => {
 
       case ACTIONS.GET_CATEGORIES:
         return { ...state, categories: action.payload };
+      default:
+        return state;
     }
   };
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
@@ -63,7 +65,9 @@ const ProductContext = ({ children }) => {
     navigate("/products");
   };
   //! лайки
-
+  // const plusLikeCoffee = () => {
+  //   dispatch({ type: ACTIONS.PLUS_LIKE_COFFEE });
+  // };
   //! -------------------CATEGORY--------------------
 
   //!GET
