@@ -4,10 +4,12 @@ import AdminPage from "../pages/AdminPage";
 import EditPage from "../pages/EditPage";
 import ProductPage from "../pages/ProductPage";
 import Menu from "../homepage/Menu";
-import Cart from "../components/cart/Cart";
+
 import PaymentForm from "../components/paymentForm/PaymentForm";
 import Comments from "../homepage/Comments";
 import Homepage from "../pages/Homepage";
+import Navbar from "../homepage/Navbar";
+import CartPage from "../pages/CartPage";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [

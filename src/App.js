@@ -6,6 +6,7 @@ import Recomended from "./homepage/Recomended";
 const App = () => {
   return (
     <div>
+      <Navbar />
       <MainRoutes />
     </div>
   );
