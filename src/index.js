@@ -17,14 +17,11 @@ root.render(
       <ProductContext>
         <FavoriteContext>
           <CartContext>
-            <App />
+            <LikeContext>
+              <App />
+            </LikeContext>
           </CartContext>
         </FavoriteContext>
-        <CartContext>
-          <LikeContext>
-            <App />
-          </LikeContext>
-        </CartContext>
       </ProductContext>
     </AuthContext>
   </BrowserRouter>
