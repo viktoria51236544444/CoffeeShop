@@ -58,7 +58,6 @@ const SideBar = () => {
   const { categories, getCategories, fetchByParams, getProducts } =
     useProducts();
   const [searchParams, setSearchParams] = useSearchParams();
-  console.log(searchParams);
   const [search, setSearch] = useState(searchParams.get("q") || "");
   const navigate = useNavigate;
   useEffect(() => {
@@ -79,9 +78,16 @@ const SideBar = () => {
       {isActive && (
         <div className="dropdown_content">
           <div className="dropdown_item">
+            <button
+              value={"all"}
+              onClick={(e) => fetchByParams("category", e.target.value)}
+            >
+              All
+            </button>
+
             {categories.map((elem) => (
               <button
-                type="button"
+                // type="button"
                 key={elem.id}
                 onClick={() => fetchByParams("category", elem.name)}
               >
