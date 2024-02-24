@@ -4,7 +4,7 @@ import fire from "../fire";
 export const authContext = createContext();
 export const useAuth = () => useContext(authContext);
 
-const AuthContext = ({ children }) => {
+const AuthContextProvider = ({ children }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [user, setUser] = useState("");
@@ -79,7 +79,6 @@ const AuthContext = ({ children }) => {
 
   const authListener = () => {
     fire.auth().onAuthStateChanged((user) => {
-      console.log(user);
       if (user) {
         setUser(user);
       } else {
@@ -111,4 +110,4 @@ const AuthContext = ({ children }) => {
   return <authContext.Provider value={values}>{children}</authContext.Provider>;
 };
 
-export default AuthContext;
+export default AuthContextProvider;

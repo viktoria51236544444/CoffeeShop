@@ -12,11 +12,12 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import { useAuth } from "../context/AuthContextProvider";
+
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { Copyright } from "@mui/icons-material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import { useAuth } from "../context/AuthContext";
 
 const Auth = () => {
   const {
