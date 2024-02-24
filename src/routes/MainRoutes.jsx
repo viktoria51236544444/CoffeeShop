@@ -8,6 +8,7 @@ import Cart from "../components/cart/Cart";
 import PaymentForm from "../components/paymentForm/PaymentForm";
 import Comments from "../homepage/Comments";
 import Homepage from "../pages/Homepage";
+import Favorite from "../homepage/Favorite";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -21,6 +22,7 @@ const MainRoutes = () => {
     // { id: 8, link: "/login", element: <Comments /> },
     // { id: 9, link: "/register", element: <Comments /> },
     { id: 10, link: "/", element: <Homepage /> },
+    { id: 10, link: "/favorite", element: <Favorite /> },
   ];
 
   return (

@@ -16,3 +16,13 @@ export const getProductsCountInCoffeeCart = () => {
 export const subPriceResult = (elem) => {
   return elem.item.price * elem.count;
 };
+
+//функция для подсчета постов в избранном
+export const getLocalStorage2 = () => {
+  const bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
+  return bookmarks;
+};
+export const getPostsCountInBookmark = () => {
+  let bookmarks = getLocalStorage2();
+  return bookmarks ? bookmarks.products.length : 0;
+};

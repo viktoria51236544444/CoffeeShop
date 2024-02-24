@@ -24,6 +24,7 @@ const Navbar = () => {
             src="https://svgsilh.com/svg/2438744-ff9800.svg"
             alt=""
           />
+
           <NavLink>
             <img className="nav__img" src={registration} alt="" />
           </NavLink>
