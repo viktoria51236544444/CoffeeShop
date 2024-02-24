@@ -235,3 +235,78 @@ from {
 to {
   transform: translateY(0);
 }
+//! DETAILS
+
+.modal_detail {
+  position: absolute;
+  top: 5%;
+  left: 30%;
+  width: 850px;
+  position: fixed;
+  // display: flex;
+  border: 2px solid black;
+  background-color: #54372b;
+  height: 90vh;
+  img {
+    width: 50%;
+    height: 50vh;
+    margin-top: 20px;
+    border: 1px solid #fff3e0;
+  }
+  button {
+    // margin-top: 30px;
+    margin-left: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #54372b;
+    width: 20%;
+    height: 40px;
+    border: 1px solid #d6d6d6;
+    border-radius: 12px;
+    font-family: leiko;
+    font-size: 21px;
+    line-height: 27px;
+    color: #fff3e0;
+    cursor: pointer;
+    box-shadow: 0 69px 19px rgba(32, 19, 22, 0.01),
+      0 44px 18px rgba(32, 19, 22, 0.09), 0 25px 15px rgba(32, 19, 22, 0.31),
+      0 11px 11px rgba(32, 19, 22, 0.52), 0 3px 6px rgba(32, 19, 22, 0.6),
+      0 0 0 rgba(32, 19, 22, 0.62);
+    &:hover {
+      transform: scale(1.05);
+      color: #2c1a18;
+    }
+  }
+}
+
+/* ImageZoom.css */
+
+.image-zoom-container {
+  position: relative;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.image-zoomed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease-in-out;
+}
+
+// .image-zoomed::before {
+//   content: "";
+//   display: block;
+// }
+
+.image-zoomed img {
+  display: none;
+}
+
+.image-zoom-container:hover .image-zoomed img {
+  display: block;
+}

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import left from "./assets/menu-img/left-bean-big.png";
-const Comments = () => {
+import { useTranslation } from "react-i18next";
+
+const Comments = ({ elem }) => {
   const navigate = useNavigate();
 
   const handledClick = () => {
@@ -109,9 +111,17 @@ const Comments = () => {
       setCommentsList(JSON.parse(storedComments));
     }
   }, []);
+  const { t, i18n } = useTranslation();
 
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+  };
   return (
     <div style={{ marginLeft: "7%" }}>
+      <div className="change_lan">
+        <button onClick={() => changeLanguage("en")}>EN</button>
+        <button onClick={() => changeLanguage("ru")}>RU</button>
+      </div>
       <img className="img__big-bean" src={left} alt="" />
       <div className="lavazza">
         <div className="lavazza__img">
@@ -124,55 +134,51 @@ const Comments = () => {
         <div>
           <div className="Lavazza__cold-p">
             <p>
-              Coffee beans Lavazza "Gold Selection", medium roast, 1000 gr
+              {t("tittle")}
               <hr />
             </p>
             <div style={{ display: "flex" }}>
-              <p style={{ marginTop: "-2%" }}>Price: $200.</p>
+              <p style={{ marginTop: "-2%" }}>{t("price")}</p>
               <button onClick={handledClick} className="card__buy">
-                Buy
+                {t("buy")}
               </button>
             </div>
           </div>
           <div>
             <div className="block11">
-              <p style={{ marginLeft: "12%" }}>Brand::</p>
-              <p style={{ marginLeft: "24%" }}>Lavazza</p>
+              <p style={{ marginLeft: "12%" }}>{t("brand")}</p>
+              <p style={{ marginLeft: "24%" }}>{t("lavaza")}</p>
             </div>
             <div className="block12">
-              <p style={{ marginLeft: "12%" }}>Weight:</p>
+              <p style={{ marginLeft: "12%" }}>{t("weight")}</p>
               <p style={{ marginLeft: "23%" }}>1kg</p>
             </div>
             <div className="block13">
-              <p style={{ marginLeft: "12%" }}>Type of packaging::</p>
-              <p style={{ marginLeft: "7%" }}>Vacuum packaging</p>
+              <p style={{ marginLeft: "12%" }}>{t("packaging")}</p>
+              <p style={{ marginLeft: "7%" }}>{t("vacum")}</p>
             </div>
             <div className="block14">
-              <p style={{ marginLeft: "12%" }}>Grain variety::</p>
-              <p style={{ marginLeft: "14%" }}>70% Arabica, 30% Robusta</p>
+              <p style={{ marginLeft: "12%" }}>{t("grain")}</p>
+              <p style={{ marginLeft: "14%" }}>{t("arabica")}</p>
             </div>
             <div className="block15">
-              <p style={{ marginLeft: "12%" }}>Degree of roasting::</p>
-              <p style={{ marginLeft: "7%" }}>Medium</p>
+              <p style={{ marginLeft: "12%" }}>{t("degree")}</p>
+              <p style={{ marginLeft: "7%" }}>{t("medium")}</p>
             </div>
             <div className="block16">
-              <p style={{ marginLeft: "12%" }}>Country of manufacture:</p>
-              <p style={{ marginLeft: "2%" }}>Italy</p>
+              <p style={{ marginLeft: "12%" }}>{t("country")}</p>
+              <p style={{ marginLeft: "2%" }}>{t("italy")}</p>
             </div>
           </div>
         </div>
       </div>
       ;
       <div className="block17">
-        <p>Description:</p>
-        <p>
-          A superb blend of selected Brazilian Arabica with a sweet flavor and
-          delicate hints of honey and almonds. Harvested from the finest Robusta
-          beans from Asian and Central American plantations.
-        </p>
+        <p>{t("description")}</p>
+        <p>{t("superb")}</p>
       </div>
       <div className="block_comments">
-        <p className="block__comments-p">Testimonials:</p>
+        <p className="block__comments-p">{t("test")}</p>
         <div className="input__comments">
           <div>
             <input
@@ -194,7 +200,7 @@ const Comments = () => {
             ></textarea>
           </div>
           <button className="submit_bottun" onClick={handleSubmit}>
-            Submit Review
+            {t("sub")}
           </button>
         </div>
         <div>
@@ -215,7 +221,7 @@ const Comments = () => {
                 className="submit_bottun"
                 onClick={() => handleDelete(commentIndex)}
               >
-                Delete comment
+                {t("delete")}
               </button>
               <button
                 style={{

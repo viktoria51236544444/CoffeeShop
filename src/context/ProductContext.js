@@ -87,10 +87,14 @@ const ProductContext = ({ children }) => {
   //! FILTER
   const fetchByParams = (query, value) => {
     const search = new URLSearchParams(window.location.search);
-    search.set(query, value);
+    if (value === "all") {
+      search.delete(query);
+    } else {
+      search.set(query, value);
+    }
+    console.log(search);
     const url = `${window.location.pathname}?${search}`;
     navigate(url);
-    getProducts();
   };
 
   const values = {
