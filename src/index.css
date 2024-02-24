@@ -232,7 +232,6 @@ body {
   color: #fff8e8;
   font-family: Andika;
   font-size: 20px;
-  margin-left: 850%;
 }
 .nav__logo {
   margin-left: 25%;
@@ -240,8 +239,8 @@ body {
 
 .nav-div {
   display: flex;
-  margin-left: 350%;
-  gap: 10px;
+  margin-left: 150%;
+  gap: 20px;
 }
 /* Ваш стиль CSS */
 .nav__img {
@@ -786,5 +785,11 @@ body {
   padding: 10px;
   margin-top: 1%;
   border: 2px solid #f3d8a6;
+}
+.img__big-bean {
+  position: absolute;
+  z-index: -1;
+  width: 1000px;
+  height: 1000px;
 }
 /*! comments components finish */

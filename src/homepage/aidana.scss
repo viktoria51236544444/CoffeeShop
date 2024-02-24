@@ -149,8 +149,16 @@ input::placeholder {
       0 11px 11px rgba(32, 19, 22, 0.52), 0 3px 6px rgba(32, 19, 22, 0.6),
       0 0 0 rgba(32, 19, 22, 0.62);
   }
+  img {
+    width: 100%;
+    height: 80%;
+    pointer-events: none;
+    background-color: #684638;
+    border-radius: 2rem;
+  }
 }
-.item {
+
+s .item {
   min-width: 25rem;
   height: 100%;
   padding: 40px;
@@ -313,5 +321,78 @@ input::placeholder {
     }
   }
 }
+.nav_menu_ {
+  display: flex;
+  flex-direction: row;
+  span {
+    font-family: leiko;
+    color: #fff8e8;
+    font-size: 20px;
+    padding-left: 40px;
+  }
+}
+.for_search {
+  // margin-top: 100px;
+  // width: 700px;
+  // height: 80px;
+  // margin-left: 30%;
+  // background-color: #53362a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 6%;
 
-//!BURGER MENU
+  input {
+    width: 80%;
+    height: 80px;
+    background-color: #462d22;
+    box-shadow: 0 69px 19px rgba(32, 19, 22, 0.01),
+      0 44px 18px rgba(32, 19, 22, 0.09), 0 25px 15px rgba(32, 19, 22, 0.31),
+      0 11px 11px rgba(32, 19, 22, 0.52), 0 3px 6px rgba(32, 19, 22, 0.6),
+      0 0 0 rgba(32, 19, 22, 0.62);
+    border: 1px solid #684638;
+    cursor: pointer;
+    font-family: Andika;
+    font-size: 21px;
+    line-height: 27px;
+    color: #fff8e8;
+    border-radius: 10px;
+    animation: slideInFromTop 0.6s ease-out;
+    padding-left: 10px;
+  }
+  ::placeholder {
+    color: #f8e4be;
+    padding-left: 45%;
+    font-family: Andika;
+    font-size: 21px;
+  }
+  input[type="search"]::-webkit-search-cancel-button {
+    position: relative;
+    right: 30px;
+  }
+  input:focus {
+    outline: 2px solid rgb(115, 42, 10); /* Изменяем цвет и толщину рамки при фокусировке */
+  }
+
+  button {
+    height: 80px;
+    cursor: pointer;
+    background-color: #462d22;
+    box-shadow: 0 69px 19px rgba(32, 19, 22, 0.01),
+      0 44px 18px rgba(32, 19, 22, 0.09), 0 25px 15px rgba(32, 19, 22, 0.31),
+      0 11px 11px rgba(32, 19, 22, 0.52), 0 3px 6px rgba(32, 19, 22, 0.6),
+      0 0 0 rgba(32, 19, 22, 0.62);
+    border: 1px solid #684638;
+    margin-left: -30px;
+    border-radius: 10px;
+  }
+
+  @keyframes slideInFromTop {
+    from {
+      transform: translateY(-30%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+}

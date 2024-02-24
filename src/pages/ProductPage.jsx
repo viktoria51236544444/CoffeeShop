@@ -6,11 +6,14 @@ import Navbar from "../homepage/Navbar";
 const ProductPage = () => {
   const [page, setPage] = useState(1);
   return (
-    <div style={{ display: "flex", justifyContent: "space-between" }}>
-      <div style={{ width: "300px", flex: "none" }}>
-        <SideBar page={page} setPage={setPage} />
+    <div>
+      <Navbar />
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ width: "300px", flex: "none" }}>
+          <SideBar page={page} setPage={setPage} />
+        </div>
+        <ProductList />
       </div>
-      <ProductList />
     </div>
   );
 };
