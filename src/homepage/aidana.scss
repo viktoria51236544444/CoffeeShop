@@ -363,9 +363,10 @@ input::placeholder {
     }
   }
 }
-.nav_menu_ {
+.nav {
   display: flex;
   flex-direction: row;
+
   span {
     font-family: leiko;
     color: #fff8e8;
@@ -382,10 +383,13 @@ input::placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 6%;
-
+  padding-top: 4%;
+  // padding: 90px 0px 50px 0px;
+  // height: 100vh;
+  // margin-left: 60px;
+  // width: 350%;
   input {
-    width: 80%;
+    width: 75%;
     height: 80px;
     background-color: #462d22;
     box-shadow: 0 69px 19px rgba(32, 19, 22, 0.01),
@@ -438,7 +442,12 @@ input::placeholder {
     }
   }
 }
-.change_lan button {
+.change_lan {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 30px;
+}
+button {
   font-family: leiko;
   font-weight: 100;
   font-size: 15px;
@@ -451,7 +460,7 @@ input::placeholder {
   border-bottom: 2px solid #f8e4be;
   border-left: 2px solid #fff3e0;
   border-top: 2px solid #e0a872;
-  margin: 30px 0px 0px 10px;
+  margin: 20px 0px 0px 10px;
   cursor: pointer;
   &:hover {
     transform: scale(1.05);

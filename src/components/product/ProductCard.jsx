@@ -125,7 +125,7 @@ const ProductCard = ({ elem }) => {
               src="https://cdn.icon-icons.com/icons2/2309/PNG/512/star_favourite_icon_141889.png"
               alt=""
             />
-          </NavLink>
+          </div>
           <img
             style={{
               width: "15%",
