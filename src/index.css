@@ -6,6 +6,11 @@ body {
   margin: 0px !important;
 }
 
+/* body {
+  background-color: #221518;
+  margin: 0;
+} */
+
 /* ! BAYANA Start MainContentBlock1 */
 .story__container {
   display: flex;
@@ -389,10 +394,6 @@ body {
   font-weight: bold;
 }
 /* ! Like Icon Badge finish */
-body {
-  background-color: #221518;
-  margin: 0;
-}
 /*? header start */
 .nav {
   display: flex;

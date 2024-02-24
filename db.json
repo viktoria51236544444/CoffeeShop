@@ -4,7 +4,7 @@
       "id": "4057",
       "title": "Aroma Coffee",
       "description": "Coffee with various blends.",
-      "category": "Instant Сoffee",
+      "category": "Instant Coffee",
       "price": 430,
       "img": "https://i0.wp.com/packagingoftheworld.com/wp-content/uploads/2024/02/Artboard-14.png?w=1440&ssl=1"
     },
@@ -12,7 +12,7 @@
       "id": "651a",
       "title": "Coffee",
       "description": "Rich in flavors and feelengs",
-      "category": "Instant Сoffee",
+      "category": "Instant Coffee",
       "price": 362,
       "img": "https://i0.wp.com/packagingoftheworld.com/wp-content/uploads/2024/02/cafeopia_01_01.jpg?fit=2000%2C2000&ssl=1"
     },
@@ -76,7 +76,7 @@
       "id": "2a65",
       "title": "Robusta Coffee",
       "description": "The word Robust means strong and rich.",
-      "category": "Instant Сoffee",
+      "category": "Instant Coffee",
       "price": 4000,
       "img": "https://i0.wp.com/1.bp.blogspot.com/-fDZZHFR0J9I/YSXfboDqHGI/AAAAAAAIR9o/c3KGI_ucJaMFXeNfuHnrj9Qnaek7YGZSACLcBGAsYHQ/s1600/Robusta%2B%25282%2529.jpeg?w=640&ssl=1"
     },
@@ -172,7 +172,7 @@
   "category": [
     {
       "id": "9c5a",
-      "name": "Instant Сoffee"
+      "name": "Instant Coffee"
     },
     {
       "id": "a0c4",
