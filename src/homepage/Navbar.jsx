@@ -57,17 +57,12 @@ const Navbar = () => {
               }}
             />
           </div>
-          <NavLink to={"/like"}>
-            <IconButton
-              size="large"
-              color="inherit"
-              className="like-icon-button"
-            >
-              <Badge badgeContent={likeCount}>
-                <FavoriteIcon color="error" />
-              </Badge>
-            </IconButton>
-          </NavLink>
+          <IconButton size="large" color="inherit" className="like-icon-button">
+            <Badge badgeContent={likeCount}>
+              <FavoriteIcon color="error" />
+            </Badge>
+          </IconButton>
+
           <img className="nav__img" src={registration} alt="" />
 
           <NavLink>
