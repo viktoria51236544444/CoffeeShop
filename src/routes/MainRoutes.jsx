@@ -18,7 +18,7 @@ const MainRoutes = () => {
     { id: 3, link: "/admin", element: <AdminPage /> },
     { id: 4, link: "/products", element: <ProductPage /> },
     { id: 5, link: "/menu", element: <Menu /> },
-    { id: 6, link: "/cart", element: <Cart /> },
+    { id: 6, link: "/cart", element: <CartPage /> },
     { id: 7, link: "/payment", element: <PaymentForm /> },
     { id: 8, link: "/comments", element: <Comments /> },
     // { id: 9, link: "/login", element: <Comments /> },

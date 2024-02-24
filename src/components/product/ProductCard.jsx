@@ -5,6 +5,7 @@ import "./product.scss";
 import { useCoffeeCart } from "../../context/CartContext";
 import Like from "./img/another like.svg";
 import { useLike } from "../../context/LikeContext";
+import Details from "./Details";
 
 const ProductCard = ({ elem }) => {
   const { deleteProduct } = useProducts();
@@ -38,11 +39,16 @@ const ProductCard = ({ elem }) => {
     setIsCoffeeLike(!isCoffeeLike);
     plusLikeCoffee(updatedLikeCoffee);
   };
-
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = (e) => {
+    e.preventDefault();
+    setOpen(false);
+  };
   return (
     <form className="form_card">
       <div className="card_content">
-        <div>
+        <div onClick={handleOpen}>
           <img src={elem.img} alt="" />
           <p>{elem.title}</p>
           <p>{elem.description}</p>
@@ -87,6 +93,7 @@ const ProductCard = ({ elem }) => {
           />
         </div>
       </div>
+      <Details open={open} handleClose={handleClose} elem={elem} />
     </form>
   );
 };
