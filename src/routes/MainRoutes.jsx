@@ -10,6 +10,7 @@ import Comments from "../homepage/Comments";
 import Homepage from "../pages/Homepage";
 import Navbar from "../homepage/Navbar";
 import CartPage from "../pages/CartPage";
+import Cart from "../components/cart/Cart";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
