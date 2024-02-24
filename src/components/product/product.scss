@@ -254,7 +254,11 @@ to {
     border: 1px solid #fff3e0;
   }
   button {
-    margin-top: 30px;
+    // margin-top: 30px;
+    margin-left: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #54372b;
     width: 20%;
     height: 40px;
