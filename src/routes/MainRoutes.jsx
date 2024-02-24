@@ -10,19 +10,19 @@ import Comments from "../homepage/Comments";
 import Homepage from "../pages/Homepage";
 import Navbar from "../homepage/Navbar";
 import CartPage from "../pages/CartPage";
+import Favorite from "../homepage/Favorite";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
-    { id: 1, link: "/", element: <Homepage /> },
-    { id: 2, link: "/edit/:id", element: <EditPage /> },
-    { id: 3, link: "/admin", element: <AdminPage /> },
-    { id: 4, link: "/products", element: <ProductPage /> },
-    { id: 5, link: "/menu", element: <Menu /> },
-    { id: 6, link: "/cart", element: <CartPage /> },
-    { id: 7, link: "/payment", element: <PaymentForm /> },
-    { id: 8, link: "/comments", element: <Comments /> },
-    // { id: 9, link: "/login", element: <Comments /> },
-    // { id: 10, link: "/register", element: <Comments /> },
+    { id: 1, link: "/edit/:id", element: <EditPage /> },
+    { id: 2, link: "/admin", element: <AdminPage /> },
+    { id: 3, link: "/products", element: <ProductPage /> },
+    { id: 4, link: "/menu", element: <Menu /> },
+    { id: 5, link: "/cart", element: <CartPagePage /> },
+    { id: 6, link: "/payment", element: <PaymentForm /> },
+    { id: 7, link: "/comments", element: <Comments /> },
+    { id: 8, link: "/", element: <Homepage /> },
+    { id: 9, link: "/favorite", element: <Favorite /> },
   ];
 
   return (
