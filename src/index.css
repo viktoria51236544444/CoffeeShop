@@ -853,13 +853,11 @@ body {
   margin-left: -10%;
 }
 /*! comments components finish */
-/* ! favorite start */
-.container_favorite {
+/* ! map start */
+.modal_p {
+  margin: 25px;
   font-family: Andika;
-  background-image: url("https://bogatyr.club/uploads/posts/2023-03/thumbs/1679275254_bogatyr-club-p-temnaya-myataya-bumaga-foni-vkontakte-22.jpg");
-  flex-direction: column;
-  width: 100%;
-  color: #f3d8a6;
+  color: #fff;
+  font-size: 20px;
 }
-
-/* ! favorite finish */
+/* ! map finish */

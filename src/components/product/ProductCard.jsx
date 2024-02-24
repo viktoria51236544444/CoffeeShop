@@ -15,7 +15,7 @@ const ProductCard = ({ elem }) => {
   const { deleteProduct } = useProducts();
   const [isCoffeeLike, setIsCoffeeLike] = useState(false);
   const { likeCoffee, plusLikeCoffee } = useLike();
-  console.log(likeCoffee);
+
   const { addProductToCoffeeCart, deleteProductInCoffeeCart } = useCoffeeCart();
   const navigate = useNavigate();
 
