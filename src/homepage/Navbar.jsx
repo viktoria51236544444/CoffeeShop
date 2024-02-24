@@ -5,21 +5,26 @@ import shoping from "./assets/ph_shopping-cart-light.png";
 import { Link, NavLink, useNavigate, useSearchParams } from "react-router-dom";
 import { useCoffeeCart } from "../context/CartContext";
 import { useProducts } from "../context/ProductContext";
+import { Badge, IconButton } from "@mui/material";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import SearchIcon from "@mui/icons-material/Search";
 import "./aidana.scss";
+import { useLike } from "../context/LikeContext";
+
 const Navbar = () => {
   const { categories, getCategories, fetchByParams, getProducts } =
     useProducts();
   const [searchParams, setSearchParams] = useSearchParams();
-  console.log(searchParams);
   const [search, setSearch] = useState(searchParams.get("q") || "");
-  const navigate = useNavigate;
+  const navigate = useNavigate();
+
   useEffect(() => {
     setSearchParams({
       q: search,
     });
     getProducts();
   }, [search]);
+
   useEffect(() => {
     getCategories();
   }, []);
@@ -27,10 +32,15 @@ const Navbar = () => {
   const { addProductToCoffeeCart, getProductsCountInCoffeeCart } =
     useCoffeeCart();
   const [badgeCount, setBadgeCount] = useState(0);
+
   useEffect(() => {
     setBadgeCount(getProductsCountInCoffeeCart());
   }, [addProductToCoffeeCart]);
+
   const [isActive, setIsActive] = useState(false);
+  const { likeCoffee } = useLike();
+
+  const likeCount = Array.isArray(likeCoffee) ? likeCoffee.length : 0;
 
   return (
     <header>
@@ -47,13 +57,19 @@ const Navbar = () => {
               }}
             />
           </div>
+          <NavLink to={"/like"}>
+            <IconButton
+              size="large"
+              color="inherit"
+              className="like-icon-button"
+            >
+              <Badge badgeContent={likeCount}>
+                <FavoriteIcon color="error" />
+              </Badge>
+            </IconButton>
+          </NavLink>
+          <img className="nav__img" src={registration} alt="" />
 
-          <img
-            className="nav__img"
-            style={{ width: "35px", height: "35px", marginTop: "-3px" }}
-            src="https://svgsilh.com/svg/2438744-ff9800.svg"
-            alt=""
-          />
           <NavLink>
             <img className="nav__img" src={registration} alt="" />
           </NavLink>
