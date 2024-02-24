@@ -4,12 +4,10 @@ import AdminPage from "../pages/AdminPage";
 import EditPage from "../pages/EditPage";
 import ProductPage from "../pages/ProductPage";
 import Menu from "../homepage/Menu";
-
 import PaymentForm from "../components/paymentForm/PaymentForm";
 import Comments from "../homepage/Comments";
 import Homepage from "../pages/Homepage";
-import Navbar from "../homepage/Navbar";
-import CartPage from "../pages/CartPage";
+import Cart from "../components/cart/Cart";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -21,8 +19,6 @@ const MainRoutes = () => {
     { id: 6, link: "/cart", element: <Cart /> },
     { id: 7, link: "/payment", element: <PaymentForm /> },
     { id: 8, link: "/comments", element: <Comments /> },
-    // { id: 9, link: "/login", element: <Comments /> },
-    // { id: 10, link: "/register", element: <Comments /> },
   ];
 
   return (
