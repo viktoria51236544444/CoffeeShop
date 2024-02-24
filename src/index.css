@@ -2,8 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Andika&family=Dancing+Script&display=swap");
 body {
   overflow-x: hidden;
-  background-color: #442318;
-  margin: 0px !important;
+  /* background-color: #442318; */
+  background-color: #221518;
+  margin: 0 !important;
 }
 
 /* body {
@@ -411,6 +412,7 @@ body {
 
 .nav-div {
   display: flex;
+  align-items: center;
   margin-left: 150%;
   gap: 20px;
 }
