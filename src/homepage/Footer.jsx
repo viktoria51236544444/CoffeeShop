@@ -30,6 +30,13 @@ const Footer = () => {
           <a href="https://www.instagram.com/" target="_blank">
             <InstFooter />
           </a>
+          <a href="https://web.telegram.org/k/#@cofeeeshoop_bot" target="blank">
+            <img
+              className="bot"
+              src="https://cdn-icons-png.flaticon.com/128/4712/4712139.png"
+              alt=""
+            />
+          </a>
         </span>
         <div class="footer__container">
           <div class="footer__items">
