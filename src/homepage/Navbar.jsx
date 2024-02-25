@@ -10,11 +10,22 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import SearchIcon from "@mui/icons-material/Search";
 import "./aidana.scss";
 import { useLike } from "../context/LikeContext";
+import ModalComponent from "./ModalComponent";
+import map from "./assets/map-img/6555118.png";
 
 import micpicture from "../homepage/assets/kisspng-voice-over-google-voice-microphone-sound-change-vo-mic-icon-5b4f9f51337303.1524658615319447852107.jpg";
 const { webkitSpeechRecognition } = window;
 
 const Navbar = () => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
   const { categories, getCategories, fetchByParams, getProducts } =
     useProducts();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -105,7 +116,6 @@ const Navbar = () => {
               }}
             />
           </div>
-
           <IconButton
             sx={{ marginTop: "-2%" }}
             size="large"
@@ -124,10 +134,19 @@ const Navbar = () => {
             />
           </NavLink>
           <img className="nav__img" src={registration} alt="" />
-
           <NavLink>
             <img className="nav__img" src={registration} alt="" />
           </NavLink>
+          <div>
+            <img
+              onClick={openModal}
+              style={{ width: "30px", height: "30px" }}
+              src={map}
+              alt=""
+            />
+
+            <ModalComponent isOpen={modalIsOpen} onRequestClose={closeModal} />
+          </div>
 
           <NavLink to={"/cart"}>
             <div className="cart-container">
