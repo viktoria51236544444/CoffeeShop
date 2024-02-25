@@ -10,8 +10,8 @@ const ModalComponent = ({ isOpen, onRequestClose }) => {
       onRequestClose={onRequestClose}
       style={{
         content: {
-          backgroundColor: "#2E1D18",
-          border: "1px solid #fff",
+          backgroundColor: "#442318",
+          border: "1px solid black",
           borderRadius: "10px",
           top: "50%",
           left: "50%",
