@@ -9,3 +9,5 @@ export const ACTIONS = {
   PLUS_LIKE_COFFEE: "PLUS_LIKE_COFFEE",
   RESET_LIKE_COFFEE: "RESET_LIKE_COFFEE",
 };
+
+export const ADMIN = "admin@gmail.com";

@@ -8,7 +8,7 @@ const Subscribe = () => {
         <p className="subscribe__text">
           Subscribe To Our Newsletter, Discounts and Promotions
         </p>
-        <div class="input-icon">
+        <div className="input-icon">
           {/* <img src={icon} className="icon-img" /> */}
           <input
             className="subscribe__input "
