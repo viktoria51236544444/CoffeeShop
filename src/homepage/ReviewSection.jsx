@@ -267,8 +267,8 @@ const ReviewSection = () => {
                   </SwiperSlide>
                 </Swiper>
               </div>
-              <div class="swiper-button-next swiper-button-next3"></div>
-              <div class="swiper-button-prev swiper-button-prev3"></div>
+              <div className="swiper-button-next swiper-button-next3"></div>
+              <div className="swiper-button-prev swiper-button-prev3"></div>
             </div>
           </div>
         </div>

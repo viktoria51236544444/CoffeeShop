@@ -1,12 +1,12 @@
 import React from "react";
 import ErrorHandleItem from "./ErrorHandleItem";
-// import { validatePassword } from "../../helpersAuth/functions";
+import { validatePassword } from "../heperAuth/authfunctions";
 
 const ErrorHandle = ({ values }) => {
-  //   const errorTips = validatePassword(values);
+  const errorTips = validatePassword(values);
   return (
     <div>
-      {/* <ul>
+      <ul>
         {Object.values(errorTips).map(({ error, text }) => (
           <ErrorHandleItem
             key={text}
@@ -15,7 +15,7 @@ const ErrorHandle = ({ values }) => {
             len={values.password.length}
           />
         ))}
-      </ul> */}
+      </ul>
     </div>
   );
 };

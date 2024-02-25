@@ -5,7 +5,7 @@
 }
 
 .main {
-  background-image: url("./Bg-f.png");
+  background-image: url("../registration/Bg-f.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -17,9 +17,9 @@
 }
 
 /* li {
-  margin-left: 18px;
-  font-size: 12px;
-} */
+    margin-left: 18px;
+    font-size: 12px;
+  } */
 
 .form {
   height: 70%;

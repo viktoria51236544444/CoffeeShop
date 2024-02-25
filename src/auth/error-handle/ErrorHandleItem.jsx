@@ -1,18 +1,16 @@
 import React from "react";
-// import CheckBoxIcon from "@mui/icons-material/CheckBox";
-// import CloseIcon from "@mui/icons-material/Close";
+import CheckBoxIcon from "@mui/icons-material/CheckBox";
+import CloseIcon from "@mui/icons-material/Close";
 import styles from "./ErrorHandle.module.css";
-// import cn from "classnames";
+import cn from "classnames";
 
 const handleDisplayIcon = (error, len) => {
   if (len > 0) {
     if (error) {
-      // return <CloseIcon style={{ fontSize: "0.8rem", paddingLeft: "3px" }} />;
-      return <icon style={{ fontSize: "0.8rem", paddingLeft: "3px" }} />;
+      return <CloseIcon style={{ fontSize: "0.8rem", paddingLeft: "3px" }} />;
     } else {
       return (
-        <icon style={{ fontSize: "0.8rem", paddingLeft: "3px" }} />
-        // <CheckBoxIcon style={{ fontSize: "0.8rem", paddingLeft: "3px" }} />
+        <CheckBoxIcon style={{ fontSize: "0.8rem", paddingLeft: "3px" }} />
       );
     }
   }
@@ -21,10 +19,10 @@ const handleDisplayIcon = (error, len) => {
 function ErrorHandleItem({ text, error, len }) {
   return (
     <li
-    // className={cn(styles.default, {
-    //   [styles.error]: error && len > 0,
-    //   [styles.pass]: !error,
-    // })}
+      className={cn(styles.default, {
+        [styles.error]: error && len > 0,
+        [styles.pass]: !error,
+      })}
     >
       {text}
       {handleDisplayIcon(error, len)}

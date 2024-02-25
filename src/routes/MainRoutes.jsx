@@ -12,7 +12,10 @@ import Navbar from "../homepage/Navbar";
 import CartPage from "../pages/CartPage";
 import Cart from "../components/cart/Cart";
 import Favorite from "../homepage/Favorite";
-import Auth from "../auth/Auth";
+
+import Registration from "../auth/registration/Registration";
+
+import LoginForm from "../auth/login/LoginForm";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -25,6 +28,8 @@ const MainRoutes = () => {
     { id: 7, link: "/comments", element: <Comments /> },
     { id: 8, link: "/", element: <Homepage /> },
     { id: 9, link: "/favorite", element: <Favorite /> },
+    { id: 10, link: "/register", element: <Registration /> },
+    { id: 11, link: "/login", element: <LoginForm /> },
   ];
 
   return (

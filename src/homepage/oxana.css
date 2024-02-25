@@ -169,7 +169,7 @@
   .review__name
   p {
   text-align: center;
-  font-family: Andika;
+  font-family: "Andika";
   font-size: 16px;
   line-height: 150.5%;
   letter-spacing: 0.035em;
@@ -203,7 +203,7 @@
   .review__card
   .review__describe
   p {
-  font-family: Andika;
+  font-family: "Andika";
   font-size: 12px;
   line-height: 150.5%;
   text-align: center;
@@ -233,7 +233,7 @@
 
 .subscribe__text {
   color: #f8e4be;
-  font-family: Andika;
+  font-family: "Andika";
   font-size: 21px;
   margin-top: 15px;
   padding: 0px 0px;
@@ -293,7 +293,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  font-family: Andika;
+  font-family: "Andika";
   color: #fff3e0;
   overflow: hidden;
   background: #533529;
