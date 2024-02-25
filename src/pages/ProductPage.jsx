@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ProductList from "../components/product/ProductList";
 import SideBar from "../components/product/SideBar";
+import Navbar from "../homepage/Navbar";
 
 const ProductPage = () => {
   const [page, setPage] = useState(1);

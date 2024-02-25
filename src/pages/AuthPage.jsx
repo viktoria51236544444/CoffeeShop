@@ -1,10 +1,10 @@
 import React from "react";
-import Auth from "../auth/Auth";
+import Registration from "../auth/registration/Registration";
 
 const AuthPage = () => {
   return (
     <div>
-      <Auth />
+      <Registration />
     </div>
   );
 };

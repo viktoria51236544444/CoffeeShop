@@ -169,7 +169,7 @@ const OurBlog = () => {
               <div className="item__icon">
                 <img src={img6} alt="beans" />
               </div>
-              <div class="icon__describe">
+              <div className="icon__describe">
                 <p>Different types of beans</p>
               </div>
               <button onClick={toggleMore3} className="p_more">
