@@ -17,7 +17,7 @@ const Cart = () => {
   }, []);
 
   const handleClick = () => {
-    navigate("/payment");
+    navigate("/pay");
   };
 
   return (
