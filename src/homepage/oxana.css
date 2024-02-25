@@ -394,7 +394,7 @@
   line-height: 26px;
   text-transform: capitalize;
   color: #fff3e0;
-  padding: 14px 0;
+  padding: 14px 3px;
 }
 @media screen and (max-width: 650px) {
   .footer__container .footer__items .footer__item .footer__about h3 {

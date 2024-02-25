@@ -19,6 +19,7 @@ const AuthContextProvider = ({ children }) => {
     setEmail("");
     setPassword("");
     setEmailConfirm("");
+    setPasswordConfirm("");
   };
 
   const clearErrors = () => {

@@ -1,33 +1,20 @@
 import React from "react";
 import styles from "../registration/Reg.module.css";
-import { Form, Formik, useFormik } from "formik";
+import { Formik, Field, ErrorMessage, Form } from "formik";
 import * as yup from "yup";
-import { useNavigate } from "react-router-dom";
-import ErrorHandle from "../error-handle/ErrorHandle";
-import PasswordConfirmItem from "../error-handle/PasswordConfirmItem";
-import { IconButton, InputAdornment } from "@mui/material";
+import { IconButton } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useAuth } from "../../context/AuthContext";
 
 const Registration = () => {
   const {
-    user,
     email,
     password,
     passowrdConfirm,
-    emailError,
-    passwordError,
     setEmail,
-    setEmailError,
-    setUser,
     setPassword,
     setPasswordConfirm,
-    setPasswordError,
     handleRegister,
-    handleLogOut,
-    handleLogin,
-    hasAccount,
-    setHasAccount,
   } = useAuth();
 
   const [showPassword, setShowPassword] = React.useState(false);
@@ -38,38 +25,24 @@ const Registration = () => {
     event.preventDefault();
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(event);
-  };
-  // const navigate = useNavigate();
-
-  const validationSchema = yup.object({
+  const validationSchema = yup.object().shape({
     email: yup
-      .string("Enter your email")
+      .string()
       .email("Enter a valid email")
       .required("Email is required"),
     password: yup
-      .string("Enter your password")
+      .string()
       .min(8, "Password should be of minimum 8 characters length")
       .required("Password is required"),
     password_confirm: yup
-      .string("Enter your password")
-      .min(8, "Password should be of minimum 8 characters length")
-      .required("Password confirmation is required"),
+      .string()
+      .oneOf([yup.ref("password"), null], "Passwords must match")
+      .required("Password confirmation is required")
+      .test("passwords-match", "Passwords must match", function (value) {
+        return this.parent.password === value;
+      }),
   });
 
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-      password: "",
-      password_confirm: "",
-    },
-    validationSchema: validationSchema,
-    onSubmit: (values) => {
-      console.log("values", values);
-    },
-  });
   return (
     <div className={styles.main}>
       <div className={styles.form}>
@@ -77,91 +50,85 @@ const Registration = () => {
           <p className={styles.form__header}>Create your own account</p>
         </div>
         <Formik
-          initialValues={formik.initialValues}
+          initialValues={{ email: "", password: "", password_confirm: "" }}
           validationSchema={validationSchema}
+          onSubmit={(values) => {
+            handleRegister(values);
+          }}
         >
           {({ isSubmitting }) => (
             <Form className={styles.form__registration} action="">
-              <input
-                className={styles.form__input}
-                id="email"
+              <Field
+                type="email"
                 name="email"
                 placeholder="Enter your email"
+                className={styles.form__input}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-
-                // error={formik.touched.email && Boolean(formik.errors.email)}
+              />
+              <ErrorMessage
+                name="email"
+                component="div"
+                className={styles.error_reg}
               />
 
-              <input
-                className={styles.form__input}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                // onBlur={formik.handleBlur}
-                placeholder="Enter password"
-                // error={
-                //   formik.touched.password && Boolean(formik.errors.password)
-                // }
-                id="password"
-                type={showPassword ? "text" : "password"}
-                endAdornment={
-                  <InputAdornment position="end">
-                    <IconButton
-                      className={styles.adornment}
-                      aria-label="toggle password visibility"
-                      onClick={handleClickShowPassword}
-                      onMouseDown={handleMouseDownPassword}
-                      edge="end"
-                    >
-                      {showPassword ? <VisibilityOff /> : <Visibility />}
-                    </IconButton>
-                  </InputAdornment>
-                }
+              <div className={styles.inputContainer}>
+                <Field
+                  type={showPassword ? "text" : "password"}
+                  name="password"
+                  placeholder="Enter password"
+                  className={styles.form__input}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <IconButton
+                  className={styles.adornment}
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                  edge="end"
+                >
+                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+              </div>
+              <ErrorMessage
+                name="password"
+                component="div"
+                className={styles.error_reg}
               />
 
-              <ErrorHandle
-                values={formik.values}
-                touched={formik.touched.password}
+              <div className={styles.inputContainer}>
+                <Field
+                  type={showPassword ? "text" : "password"}
+                  name="password_confirm"
+                  placeholder="Confirm your password"
+                  value={passowrdConfirm}
+                  className={styles.form__input}
+                  onChange={(e) => setPasswordConfirm(e.target.value)}
+                />
+                <IconButton
+                  className={styles.adornment}
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                  edge="end"
+                >
+                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+              </div>
+              <ErrorMessage
+                name="password_confirm"
+                component="div"
+                className={styles.error_reg}
               />
 
-              <input
-                className={styles.form__input}
-                style={{ borderRadius: "12px" }}
-                value={formik.values.password_confirm}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                placeholder="Confirm your password"
-                error={
-                  formik.touched.password_confirm &&
-                  Boolean(formik.errors.password_confirm)
-                }
-                id="password_confirm"
-                type={showPassword ? "text" : "password"}
-                endAdornment={
-                  <InputAdornment position="end">
-                    <IconButton
-                      className={styles.adornment}
-                      aria-label="toggle password visibility"
-                      onClick={handleClickShowPassword}
-                      onMouseDown={handleMouseDownPassword}
-                      edge="end"
-                    >
-                      {showPassword ? <VisibilityOff /> : <Visibility />}
-                    </IconButton>
-                  </InputAdornment>
-                }
-              />
-
-              <PasswordConfirmItem values={formik.values} />
               <button
                 style={{
-                  backgroundColor: formik.isValid ? "#a88c81" : "#e34608",
+                  backgroundColor: "#a88c81",
                 }}
                 className={styles.form__button}
-                onClick={handleRegister}
                 type="submit"
-                // disabled={isSubmitting}
-                // variant="contained"
+                onClick={handleRegister}
               >
                 Continue
               </button>
