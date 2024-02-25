@@ -123,7 +123,7 @@ const MainContentBlock1 = () => {
               </p>
               <div>
                 <p onClick={toggleMore} className="p_more">
-                  {showMore ? "Less" : "More"}{" "}
+                  {showMore ? "Less" : "More"}
                 </p>
               </div>
             </div>

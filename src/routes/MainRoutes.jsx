@@ -8,7 +8,6 @@ import PaymentForm from "../components/paymentForm/PaymentForm";
 import Comments from "../homepage/Comments";
 import Homepage from "../pages/Homepage";
 import Cart from "../components/cart/Cart";
-import Favorite from "../homepage/Favorite";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
