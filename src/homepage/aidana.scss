@@ -55,19 +55,19 @@ input::placeholder {
 }
 
 .button_reserve {
+  margin-bottom: 15px;
   font-family: leiko;
   font-weight: 400;
   font-size: 24px;
   line-height: 100%;
   color: #f8e4be;
-  padding: 12px 36px;
+  padding: 15px 36px;
   border-radius: 49px;
   background: rgba(247, 225, 188, 0.1);
   border-right: 2px solid #e0a872;
   border-bottom: 2px solid #f8e4be;
   border-left: 2px solid #fff3e0;
   border-top: 2px solid #e0a872;
-  transition: 0.3s;
 }
 .input_input {
   width: 100%;
@@ -113,8 +113,11 @@ input::placeholder {
 }
 .button_email {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .input_email {
+  // margin-top: 20px;
   margin-right: 10px;
   width: 400px;
   height: 54px;
@@ -367,12 +370,12 @@ input::placeholder {
   display: flex;
   flex-direction: row;
 
-  // span {
-  //   font-family: leiko;
-  //   color: #fff8e8;
-  //   font-size: 20px;
-  //   padding-left: 40px;
-  // }
+  span {
+    font-family: leiko;
+    color: #fff8e8;
+    font-size: 20px;
+    padding-left: 10px;
+  }
 }
 .for_search {
   // margin-top: 100px;
@@ -417,7 +420,7 @@ input::placeholder {
     right: 30px;
   }
   input:focus {
-    outline: 2px solid rgb(115, 42, 10); /* Изменяем цвет и толщину рамки при фокусировке */
+    outline: 2px solid rgb(115, 42, 10);
   }
 
   button {
