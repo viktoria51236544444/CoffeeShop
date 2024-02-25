@@ -2,8 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Andika&family=Dancing+Script&display=swap");
 body {
   overflow-x: hidden;
-  background-color: #442318;
-  margin: 0px !important;
+  /* background-color: #442318; */
+  background-color: #221518;
+  margin: 0 !important;
 }
 
 /* body {
@@ -220,123 +221,7 @@ body {
   transform: scale(1.1);
 }
 /* ! BAYANA FINISH MainContentBlock1 */
-/* ! Сart Start */
-/* .cart-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #442318;
-  padding: 20px;
-} */
-.dynamic-products {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 70%;
-}
 
-.cart-item {
-  flex: 0 1 calc(33.33% - 10px);
-  margin-bottom: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.cart-item-image {
-  width: 100%;
-  height: auto;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-}
-
-.cart-item-details {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 10px; /* Отступы внутри карточки */
-}
-
-.cart-item-info {
-  flex: 1;
-}
-
-.cart-item-title {
-  font-size: 20px; /* Уменьшаем размер заголовка */
-  font-weight: bold;
-  color: #3e3e3e; /* Цвет заголовка карточки */
-}
-
-.cart-item-description {
-  font-size: 12px; /* Уменьшаем размер описания */
-  color: #666; /* Цвет описания карточки */
-}
-
-.cart-item-category {
-  font-size: 12px; /* Уменьшаем размер категории */
-  font-style: italic;
-  margin-bottom: 5px;
-  color: #666; /* Цвет категории карточки */
-}
-
-.cart-item-price {
-  font-size: 14px; /* Уменьшаем размер цены */
-  margin-bottom: 5px;
-  color: #3e3e3e; /* Цвет цены карточки */
-}
-
-.cart-item-input {
-  width: 30px; /* Уменьшаем ширину инпута */
-  margin-bottom: 5px;
-}
-
-.cart-item-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-.cart-item-delete {
-  background-color: #ff5555;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  border-radius: 4px; /* Закругление углов кнопки */
-}
-
-.static-items {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.total-price {
-  background-color: #f5f5f5;
-  padding: 8px; /* Уменьшаем отступы */
-  font-size: 14px; /* Уменьшаем размер шрифта */
-  font-weight: bold;
-  border-radius: 8px; /* Закругление углов блока с общей ценой */
-  margin-bottom: 10px; /* Отступ снизу */
-}
-
-.order-button {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  padding: 8px 16px; /* Уменьшаем размер кнопки */
-  font-size: 12px; /* Уменьшаем размер шрифта */
-  cursor: pointer;
-  border-radius: 4px; /* Закругление углов кнопки */
-}
-
-.order-button:hover {
-  background-color: #45a049;
-}
-
-/* ! Cart Finish */
 .payment-form {
   margin: 20px;
 }
@@ -347,6 +232,7 @@ body {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  background-color: rgb(174, 149, 126);
 }
 
 .submit-button {
@@ -411,6 +297,7 @@ body {
 
 .nav-div {
   display: flex;
+  align-items: center;
   margin-left: 150%;
   gap: 20px;
 }
@@ -768,9 +655,9 @@ body {
   margin-left: 60px;
   margin-top: 120px;
 
-  &:hover {
+  /* &:hover {
     transform: scale(1.05);
-  }
+  } */
 
   .card_content {
     display: flex;
@@ -966,3 +853,11 @@ body {
   margin-left: -10%;
 }
 /*! comments components finish */
+/* ! map start */
+.modal_p {
+  margin: 25px;
+  font-family: Andika;
+  color: #fff;
+  font-size: 20px;
+}
+/* ! map finish */

@@ -6,6 +6,7 @@ import { useCoffeeCart } from "../../context/CartContext";
 import { useBM } from "../../context/FavoriteContext";
 import Like from "./img/another like.svg";
 import { useLike } from "../../context/LikeContext";
+import Details from "./Details";
 import shoping from "./img/ph_shopping-cart-light.png";
 
 const ProductCard = ({ elem }) => {
@@ -14,7 +15,7 @@ const ProductCard = ({ elem }) => {
   const { deleteProduct } = useProducts();
   const [isCoffeeLike, setIsCoffeeLike] = useState(false);
   const { likeCoffee, plusLikeCoffee } = useLike();
-  console.log(likeCoffee);
+
   const { addProductToCoffeeCart, deleteProductInCoffeeCart } = useCoffeeCart();
   const navigate = useNavigate();
 
@@ -47,11 +48,16 @@ const ProductCard = ({ elem }) => {
     setIsCoffeeLike(!isCoffeeLike);
     plusLikeCoffee(updatedLikeCoffee);
   };
-
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = (e) => {
+    e.preventDefault();
+    setOpen(false);
+  };
   return (
     <form className="form_card">
       <div className="card_content">
-        <div>
+        <div onClick={handleOpen}>
           <img src={elem.img} alt="" />
           <p>{elem.title}</p>
           <p>{elem.description}</p>
@@ -120,24 +126,21 @@ const ProductCard = ({ elem }) => {
               alt=""
             />
           </div>
-          <div>
-            <img
-              style={{
-                width: "50px",
-                height: "50px",
-                cursor: "pointer",
-              }}
-              src={
-                isCoffeeLike
-                  ? Like
-                  : "https://svgsilh.com/svg/2438744-ff9800.svg"
-              }
-              alt=""
-              onClick={handleLikeClick}
-            />
-          </div>
+          <img
+            style={{
+              width: "15%",
+              height: "15%",
+              cursor: "pointer",
+            }}
+            src={
+              isCoffeeLike ? Like : "https://svgsilh.com/svg/2438744-ff9800.svg"
+            }
+            alt=""
+            onClick={handleLikeClick}
+          />
         </div>
       </div>
+      <Details open={open} handleClose={handleClose} elem={elem} />
     </form>
   );
 };

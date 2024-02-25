@@ -10,11 +10,22 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import SearchIcon from "@mui/icons-material/Search";
 import "./aidana.scss";
 import { useLike } from "../context/LikeContext";
+import ModalComponent from "./ModalComponent";
+import map from "./assets/map-img/6555118.png";
 
 import micpicture from "../homepage/assets/kisspng-voice-over-google-voice-microphone-sound-change-vo-mic-icon-5b4f9f51337303.1524658615319447852107.jpg";
 const { webkitSpeechRecognition } = window;
 
 const Navbar = () => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
   const { categories, getCategories, fetchByParams, getProducts } =
     useProducts();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -86,7 +97,8 @@ const Navbar = () => {
   };
 
   return (
-    <div style={{ position: "absolute", zIndex: "1" }}>
+    // style={{ position: "absolute", zIndex: "1" }}
+    <div>
       <nav style={{ marginLeft: "-8%" }} className="nav">
         <img className="nav__logo" src={logo} alt="" />
         <div className="nav-div">
@@ -96,6 +108,7 @@ const Navbar = () => {
           >
             <SearchIcon
               sx={{
+                // paddingLeft: "-600px",
                 color: "#f7e5da",
                 width: "80",
                 marginTop: "3px",
@@ -103,9 +116,8 @@ const Navbar = () => {
               }}
             />
           </div>
-
           <IconButton
-            sx={{ marginTop: "-5%" }}
+            sx={{ marginTop: "-2%" }}
             size="large"
             color="inherit"
             className="like-icon-button"
@@ -114,12 +126,27 @@ const Navbar = () => {
               <FavoriteIcon color="error" />
             </Badge>
           </IconButton>
-
+          <NavLink to={"/favorite"}>
+            <img
+              style={{ width: "35px", height: "35px", marginTop: "-5px" }}
+              src="https://cdn.icon-icons.com/icons2/2309/PNG/512/star_favourite_icon_141889.png"
+              alt=""
+            />
+          </NavLink>
           <img className="nav__img" src={registration} alt="" />
-
           <NavLink>
             <img className="nav__img" src={registration} alt="" />
           </NavLink>
+          <div>
+            <img
+              onClick={openModal}
+              style={{ width: "30px", height: "30px" }}
+              src={map}
+              alt=""
+            />
+
+            <ModalComponent isOpen={modalIsOpen} onRequestClose={closeModal} />
+          </div>
 
           <NavLink to={"/cart"}>
             <div className="cart-container">
@@ -144,31 +171,33 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      {isActive && (
-        <div className="for_search">
-          <input
-            id="transcript"
-            placeholder="Search..."
-            type="search"
-            onChange={(e) => {
-              setSearch(e.target.value);
-              console.log(e.target.value);
-            }}
-          />
-          <button onClick={handleMicClick}>
-            <img
-              style={{
-                width: "26px",
-                height: "26px",
-                backgroundColor: "none",
-                borderRadius: "40px",
-              }}
-              src={micpicture}
-            />
-          </button>
-        </div>
-      )}
       ;
+      <div>
+        {isActive && (
+          <div className="for_search">
+            <input
+              id="transcript"
+              placeholder="Search..."
+              type="search"
+              onChange={(e) => {
+                setSearch(e.target.value);
+                console.log(e.target.value);
+              }}
+            />
+            <button onClick={handleMicClick}>
+              <img
+                style={{
+                  width: "26px",
+                  height: "26px",
+                  backgroundColor: "none",
+                  borderRadius: "40px",
+                }}
+                src={micpicture}
+              />
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
