@@ -679,3 +679,15 @@
   }
 }
 /* !Footer finish Oxana */
+
+.user_menu {
+  color: white;
+}
+
+.link_authentication {
+  text-decoration: none;
+  text-decoration-line: none;
+}
+.link_authentication:visited {
+  text-decoration: none;
+}

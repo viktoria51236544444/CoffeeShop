@@ -52,7 +52,7 @@ const LoginForm = () => {
           sx={{ fontSize: "15px", fontWeight: "regular", letterSpacing: 1 }}
           className={styles.form__input}
           type="text"
-          placeholder="Введи логин"
+          placeholder="Enter your email"
           onChange={(e) => setEmail(e.target.value)}
         />
 
@@ -60,7 +60,7 @@ const LoginForm = () => {
           sx={{ fontSize: "15px", fontWeight: "regular", letterSpacing: 1 }}
           className={styles.form__input}
           type={showPassword ? "text" : "password"}
-          placeholder="Введи пароль"
+          placeholder="Enter your password"
           onChange={(e) => setPassword(e.target.value)}
           // endAdornment={
           //   <InputAdornment position="start">
@@ -85,7 +85,7 @@ const LoginForm = () => {
         </button>
       </form>
       <NavLink to="/register" className={styles.form__bottom_link}>
-        <p className={styles.form__bottom_text}>У меня еще нет аккаунта</p>
+        <p className={styles.form__bottom_text}>I dont' have an account yet</p>
       </NavLink>
     </div>
   );

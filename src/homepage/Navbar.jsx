@@ -14,6 +14,8 @@ import ModalComponent from "./ModalComponent";
 import map from "./assets/map-img/6555118.png";
 
 import micpicture from "../homepage/assets/kisspng-voice-over-google-voice-microphone-sound-change-vo-mic-icon-5b4f9f51337303.1524658615319447852107.jpg";
+import { useAuth } from "../context/AuthContext";
+import { ADMIN } from "../helpers/const";
 const { webkitSpeechRecognition } = window;
 
 const Navbar = () => {
@@ -56,7 +58,7 @@ const Navbar = () => {
 
   const likeCount = Array.isArray(likeCoffee) ? likeCoffee.length : 0;
 
-  // ! Voice search
+  // ! Voice search start
   function startDictation() {
     if (window.hasOwnProperty("webkitSpeechRecognition")) {
       let recognition = new webkitSpeechRecognition();
@@ -75,15 +77,6 @@ const Navbar = () => {
         recognition.stop();
       };
 
-      // recognition.onresult = function (e) {
-      //   const transcript = e.results[0][0].transcript;
-      //   const inputElement = document.getElementById("transcript");
-      //   inputElement.value = transcript.toLowerCase(); // Установка значения инпута
-      //   setSearch(transcript); // Обновление состояния search
-      //   inputElement.dispatchEvent(new Event("input", { bubbles: true })); // Вызов события input
-      //   recognition.stop();
-      // };
-
       recognition.onerror = function (e) {
         recognition.stop();
       };
@@ -96,14 +89,45 @@ const Navbar = () => {
     console.log("button clicked");
   };
 
+  // ! Voice search finish
+
+  // !Auth
+  const { user, handleLogOut } = useAuth();
+  const isAdmin = user && user === ADMIN;
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [isAccountClicked, setIsAccountClicked] = useState(false);
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const logOut = () => {
+    handleLogOut();
+    handleClose(); // Закрываем меню после выхода
+  };
+
+  const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuItemClick = () => {
+    handleClose(); // Закрываем меню при выборе пункта
+  };
+
+  const handleOutsideClick = (event) => {
+    if (anchorEl && !anchorEl.contains(event.target)) {
+      handleClose(); // Закрываем меню при клике вне него
+    }
+  };
+
   return (
     // style={{ position: "absolute", zIndex: "1" }}
-    <div>
+    <div className="navbar_main">
       <nav style={{ marginLeft: "-8%" }} className="nav">
         <img className="nav__logo" src={logo} alt="" />
         <div className="nav-div">
           <div
-            style={{ marginLeft: "-200%" }}
+            style={{ marginLeft: "-230%" }}
             onClick={(e) => setIsActive(!isActive)}
           >
             <SearchIcon
@@ -133,10 +157,7 @@ const Navbar = () => {
               alt=""
             />
           </NavLink>
-          <img className="nav__img" src={registration} alt="" />
-          <NavLink>
-            <img className="nav__img" src={registration} alt="" />
-          </NavLink>
+
           <div>
             <img
               onClick={openModal}
@@ -158,7 +179,14 @@ const Navbar = () => {
           </NavLink>
         </div>
         <div style={{ marginLeft: "-60%" }} className="nav_menu_">
-          <div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignContent: "center",
+              width: "600px",
+            }}
+          >
             <Link style={{ textDecorationLine: "none" }} to={"/"}>
               <span>Home</span>
             </Link>
@@ -166,8 +194,62 @@ const Navbar = () => {
               <span>Menu</span>
             </Link>
             <Link style={{ textDecorationLine: "none" }} to={"./products"}>
-              <span>Product</span>
+              <span>Products</span>
             </Link>
+            <Link
+              style={{
+                textDecorationLine: "none",
+                display: "flex",
+                justifyContent: "center",
+              }}
+              onClick={() => setIsAccountClicked(!isAccountClicked)} // При клике на "Your Account" переключаем состояние
+            >
+              <span style={{ marginLeft: "100px", paddingTop: "0px" }}>
+                {user ? `Hello, ${user.email}` : "Hello, Guest"}
+              </span>
+              <img className="nav__img" src={registration} alt="" />
+            </Link>
+            {user && ( // Показываем Log out, если пользователь авторизован
+              <div onClick={handleLogOut}>
+                <span
+                  className="user_menu"
+                  style={{
+                    textDecorationLine: "none",
+                    border: "none",
+                    backgroundColor: "none",
+                  }}
+                  onClick={handleMenuItemClick}
+                >
+                  Log out
+                </span>
+              </div>
+            )}
+
+            {!user &&
+              isAccountClicked && ( // Показываем элементы Register и Log in, если состояние isAccountClicked равно true и пользователь не авторизован
+                <div>
+                  <NavLink>
+                    <Link
+                      className="link_authentication"
+                      style={{
+                        textDecorationLine: "none",
+                        ":hover": { textDecoration: "none" },
+                      }}
+                      to="/register"
+                      onClick={handleMenuItemClick}
+                    >
+                      <span className="user_menu">Register</span>
+                    </Link>
+                    <Link
+                      style={{ textDecorationLine: "none" }}
+                      to="/login"
+                      onClick={handleMenuItemClick}
+                    >
+                      <span className="user_menu">Log in</span>
+                    </Link>
+                  </NavLink>
+                </div>
+              )}
           </div>
         </div>
       </nav>

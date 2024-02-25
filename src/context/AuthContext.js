@@ -56,7 +56,7 @@ const AuthContextProvider = ({ children }) => {
     fire
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then(() => navigate("/"), console.log("then worked"))
+      .then(() => navigate("/"), console.log("login then worked"))
       .catch((error) => {
         switch (error.code) {
           case "auth/user-disabled":

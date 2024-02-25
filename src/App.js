@@ -10,6 +10,7 @@ import LoginForm from "./auth/login/LoginForm";
 const App = () => {
   return (
     <div>
+      <Navbar />
       <MainRoutes />
     </div>
   );
