@@ -24,7 +24,7 @@
 
 .form__header {
   font-family: "Dancing Script";
-  margin-top: 20%;
+  margin-top: 7%;
   font-weight: 700;
   font-size: 54px;
   color: #a88c81;
@@ -49,7 +49,7 @@
   margin-top: 20px;
   margin-bottom: 10px;
   width: 95%;
-  height: 8vh;
+  height: 6vh;
 }
 .form__input::placeholder {
   font-family: "Andika";

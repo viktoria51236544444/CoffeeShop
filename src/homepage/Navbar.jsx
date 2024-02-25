@@ -123,11 +123,11 @@ const Navbar = () => {
   return (
     // style={{ position: "absolute", zIndex: "1" }}
     <div className="navbar_main">
-      <nav style={{ marginLeft: "-8%" }} className="nav">
+      <nav style={{ marginLeft: "-15%" }} className="nav">
         <img className="nav__logo" src={logo} alt="" />
         <div className="nav-div">
           <div
-            style={{ marginLeft: "-230%" }}
+            style={{ marginLeft: "-380%" }}
             onClick={(e) => setIsActive(!isActive)}
           >
             <SearchIcon
@@ -178,12 +178,12 @@ const Navbar = () => {
             </div>
           </NavLink>
         </div>
-        <div style={{ marginLeft: "-60%" }} className="nav_menu_">
+        <div style={{ marginLeft: "-95%" }} className="nav_menu_">
           <div
             style={{
               display: "flex",
-              justifyContent: "center",
-              alignContent: "center",
+              justifyContent: "flex-start",
+              alignItems: "center",
               width: "600px",
             }}
           >
@@ -204,7 +204,7 @@ const Navbar = () => {
               }}
               onClick={() => setIsAccountClicked(!isAccountClicked)} // При клике на "Your Account" переключаем состояние
             >
-              <span style={{ marginLeft: "100px", paddingTop: "0px" }}>
+              <span style={{ marginLeft: "10px", paddingTop: "0px" }}>
                 {user ? `Hello, ${user.email}` : "Hello, Guest"}
               </span>
               <img className="nav__img" src={registration} alt="" />
