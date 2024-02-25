@@ -221,10 +221,143 @@ body {
   transform: scale(1.1);
 }
 /* ! BAYANA FINISH MainContentBlock1 */
+/* ! Bayana Start Payment form */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
 
-.payment-form {
-  margin: 20px;
+.container {
+  font-family: Andika;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  min-height: 100vh;
+  background: linear-gradient(
+    90deg,
+    rgba(173, 113, 74, 0.35) 60%,
+    #d7b0a0 40.1%
+  );
 }
+
+.container form {
+  padding: 20px;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container form .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.container form .row .col {
+  flex: 1 1 250px;
+}
+
+.container form .row .col .title {
+  font-size: 20px;
+  color: #333;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.container form .row .col .inputBox {
+  margin: 15px 0;
+}
+
+.container form .row .col .inputBox span {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.container form .row .col .inputBox input {
+  width: 90%;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  font-size: 15px;
+  text-transform: none;
+}
+
+.container form .row .col .inputBox input:focus {
+  border: 1px solid #000;
+}
+
+.container form .row .col .flex {
+  display: flex;
+  gap: 15px;
+}
+
+.container form .row .col .flex .inputBox {
+  margin-top: 5px;
+}
+
+.container form .row .col .inputBox img {
+  height: 34px;
+  margin-top: 5px;
+  filter: drop-shadow(0 0 1px #000);
+}
+
+.container form .submit-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 30px;
+  background: #221518;
+  font-family: Dancing Script;
+  color: #fff;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.container form .submit-btn:hover {
+  background: #442318;
+}
+.error-message {
+  color: red;
+}
+.input-label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.input-select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  appearance: none;
+  background-color: #fff;
+}
+
+.input-select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.select-arrow {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #999;
+}
+
+/* !  */
 
 .input-field {
   display: block;
@@ -861,3 +994,73 @@ body {
   font-size: 20px;
 }
 /* ! map finish */
+
+/*! Cart start */
+.form__cart {
+  background-color: #442318;
+}
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 4%;
+  font-family: Andika;
+  color: #f3d8a6;
+}
+
+.cart-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 20px;
+}
+
+.cart-product {
+  display: flex;
+  align-items: center;
+}
+
+.cart-product-image {
+  width: 250px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.cart-item-input {
+  width: 40px;
+  text-align: center;
+}
+
+.cart-item-delete {
+  color: black;
+  background-color: #f3d8a6;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Andika;
+}
+
+.static-items {
+  margin-top: 20px;
+}
+
+.total-price {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #f3d8a6;
+  font-family: Andika;
+  margin: 10px;
+}
+
+.order-button {
+  background-color: #f3d8a6;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Andika;
+  margin-top: -2%;
+}
+/*! cart finish  */

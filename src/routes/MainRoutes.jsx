@@ -4,20 +4,17 @@ import AdminPage from "../pages/AdminPage";
 import EditPage from "../pages/EditPage";
 import ProductPage from "../pages/ProductPage";
 import Menu from "../homepage/Menu";
-
 import PaymentForm from "../components/paymentForm/PaymentForm";
 import Comments from "../homepage/Comments";
 import Homepage from "../pages/Homepage";
-import Navbar from "../homepage/Navbar";
-import CartPage from "../pages/CartPage";
 import Cart from "../components/cart/Cart";
+import CartWithPayment from "../components/paymentForm/CartWithPayment";
+import { useAuth } from "../context/AuthContext";
+import CartPage from "../pages/CartPage";
 import Favorite from "../homepage/Favorite";
-
 import Registration from "../auth/registration/Registration";
-
 import LoginForm from "../auth/login/LoginForm";
 import { ADMIN } from "../helpers/const";
-import { useAuth } from "../context/AuthContext";
 
 const MainRoutes = () => {
   const { user } = useAuth();

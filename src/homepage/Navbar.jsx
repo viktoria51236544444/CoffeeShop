@@ -266,7 +266,7 @@ const Navbar = () => {
                 console.log(e.target.value);
               }}
             />
-            <button onClick={handleMicClick}>
+            <button style={{ marginBottom: "20px" }} onClick={handleMicClick}>
               <img
                 style={{
                   width: "26px",

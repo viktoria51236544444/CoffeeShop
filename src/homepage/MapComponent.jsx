@@ -35,6 +35,7 @@ const MapComponent = () => {
         marginLeft: "7%",
         borderRadius: "10px",
         border: "2px solid white",
+        border: "1px solid black",
       }}
     ></div>
   );
