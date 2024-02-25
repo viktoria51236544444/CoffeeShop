@@ -93,7 +93,7 @@ const Navbar = () => {
 
   // !Auth
   const { user, handleLogOut } = useAuth();
-  const isAdmin = user && user === ADMIN;
+  const isAdmin = user && user.email === ADMIN;
   const [anchorEl, setAnchorEl] = useState(null);
   const [isAccountClicked, setIsAccountClicked] = useState(false);
 
@@ -119,6 +119,8 @@ const Navbar = () => {
       handleClose(); // Закрываем меню при клике вне него
     }
   };
+
+  console.log("User:", user);
 
   return (
     // style={{ position: "absolute", zIndex: "1" }}
@@ -196,6 +198,11 @@ const Navbar = () => {
             <Link style={{ textDecorationLine: "none" }} to={"./products"}>
               <span>Products</span>
             </Link>
+            {isAdmin ? (
+              <Link style={{ textDecorationLine: "none" }} to={"./admin"}>
+                <span>Admin</span>
+              </Link>
+            ) : null}
             <Link
               style={{
                 textDecorationLine: "none",
@@ -205,7 +212,7 @@ const Navbar = () => {
               onClick={() => setIsAccountClicked(!isAccountClicked)} // При клике на "Your Account" переключаем состояние
             >
               <span style={{ marginLeft: "10px", paddingTop: "0px" }}>
-                {user ? `Hello, ${user.email}` : "Hello, Guest"}
+                {user ? `Hi, ${user.email}` : "Hello, Guest"}
               </span>
               <img className="nav__img" src={registration} alt="" />
             </Link>

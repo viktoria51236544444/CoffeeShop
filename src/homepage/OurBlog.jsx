@@ -52,7 +52,7 @@ const OurBlog = () => {
     setShowMore6(!showMore6);
   };
   return (
-    <div className="container">
+    <div className="container05">
       <div className="our_title">
         <h2>Our Blog</h2>
       </div>
