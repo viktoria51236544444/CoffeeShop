@@ -13,9 +13,9 @@ import { ReactComponent as PostFooter } from "../homepage/assets/footer-img/Post
 const Footer = () => {
   return (
     <div>
-      <footer class="footer" style={{ backgroundImage: `url(${bgf})` }}>
+      <footer className="footer" style={{ backgroundImage: `url(${bgf})` }}>
         <span
-          class="footer__social"
+          className="footer__social"
           style={{
             backgroundImage: `url(${footerbean1}), url(${footerbean2})`,
           }}
@@ -31,16 +31,16 @@ const Footer = () => {
             <InstFooter />
           </a>
         </span>
-        <div class="footer__container">
-          <div class="footer__items">
+        <div className="footer__container">
+          <div className="footer__items">
             <img
-              class="footer__main-img"
+              className="footer__main-img"
               src={coffeeFooter}
               alt="cofe-machine"
             />
 
-            <div class="footer__item">
-              <div class="footer__about">
+            <div className="footer__item">
+              <div className="footer__about">
                 <h3>About</h3>
                 <ul>
                   <li>
@@ -54,7 +54,7 @@ const Footer = () => {
                   </li>
                 </ul>
               </div>
-              <div class="footer__customer">
+              <div className="footer__customer">
                 <h3>Customer Recourses</h3>
                 <ul>
                   <li>
@@ -68,7 +68,7 @@ const Footer = () => {
                   </li>
                 </ul>
               </div>
-              <div class="footer__services">
+              <div className="footer__services">
                 <h3>Services</h3>
                 <ul>
                   <li>
@@ -82,7 +82,7 @@ const Footer = () => {
                   </li>
                 </ul>
               </div>
-              <div class="footer__contacts" id="contact">
+              <div className="footer__contacts" id="contact">
                 <ul>
                   <li>
                     <a href="#">
@@ -106,8 +106,8 @@ const Footer = () => {
             </div>
           </div>
 
-          <div class="footer__copyright">
-            <div class="copyright">
+          <div className="footer__copyright">
+            <div className="copyright">
               <p>Created By Dream Team</p>
               <p>Copyright 2023 Eliza Coffee . All rights reserved.</p>
             </div>

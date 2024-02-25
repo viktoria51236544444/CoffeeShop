@@ -5,7 +5,7 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import ProductContext from "./context/ProductContext";
 import CartContext from "./context/CartContext";
-import AuthContext from "./context/AuthContext";
+import AuthContextProvider from "./context/AuthContext";
 import FavoriteContext from "./context/FavoriteContext";
 import LikeContext from "./context/LikeContext";
 import "./i18n";
@@ -14,7 +14,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <BrowserRouter>
-    <AuthContext>
+    <AuthContextProvider>
       <Suspense fallback={<div>Loading...</div>}>
         <ProductContext>
           <FavoriteContext>
@@ -26,6 +26,6 @@ root.render(
           </FavoriteContext>
         </ProductContext>
       </Suspense>
-    </AuthContext>
+    </AuthContextProvider>
   </BrowserRouter>
 );

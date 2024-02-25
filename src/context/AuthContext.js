@@ -4,11 +4,12 @@ import fire from "../fire";
 export const authContext = createContext();
 export const useAuth = () => useContext(authContext);
 
-const AuthContext = ({ children }) => {
+const AuthContextProvider = ({ children }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [user, setUser] = useState("");
   const [emailConfirm, setEmailConfirm] = useState("");
+  const [passowrdConfirm, setPasswordConfirm] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [hasAccount, setHasAccount] = useState("");
@@ -17,6 +18,7 @@ const AuthContext = ({ children }) => {
   const clearInputs = () => {
     setEmail("");
     setPassword("");
+    setEmailConfirm("");
   };
 
   const clearErrors = () => {
@@ -29,7 +31,7 @@ const AuthContext = ({ children }) => {
     clearErrors();
     fire
       .auth()
-      .createUserWithEmailAndPassword(email, password)
+      .createUserWithEmailAndPassword(email, password, passowrdConfirm)
       .then(() => {
         setHasAccount(!hasAccount);
       })
@@ -54,16 +56,18 @@ const AuthContext = ({ children }) => {
     fire
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then(() => navigate("/"))
+      .then(() => navigate("/"), console.log("login then worked"))
       .catch((error) => {
         switch (error.code) {
           case "auth/user-disabled":
           case "auth/invalid-email":
           case "auth/user-not-found":
-            setEmailError(Object.values(error.code));
+            setEmailError(error.code);
+            console.log(error.code);
             break;
           case "auth/wrong-password":
             setPasswordError(Object.values(error.code));
+            console.log(Object.values(error.code));
             break;
           default:
             break;
@@ -94,6 +98,7 @@ const AuthContext = ({ children }) => {
     user,
     email,
     password,
+    passowrdConfirm,
     emailError,
     passwordError,
     setEmail,
@@ -101,6 +106,7 @@ const AuthContext = ({ children }) => {
     setUser,
     setEmailError,
     setPasswordError,
+    setPasswordConfirm,
     handleRegister,
     handleLogOut,
     handleLogin,
@@ -110,4 +116,4 @@ const AuthContext = ({ children }) => {
   return <authContext.Provider value={values}>{children}</authContext.Provider>;
 };
 
-export default AuthContext;
+export default AuthContextProvider;
