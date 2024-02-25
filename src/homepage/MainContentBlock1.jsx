@@ -28,23 +28,18 @@ const MainContentBlock1 = () => {
 
   const openModalEquipment = () => {
     setModalIsOpenEquipment(true);
-    navigate("/products");
   };
   const openModalType = () => {
     setModalIsOpenType(true);
-    navigate("/products");
   };
   const openModalTake = () => {
     setModalIsOpenTake(true);
-    navigate("/menu");
   };
   const openModalBeansVariant = () => {
     setModalIsOpenBeansVariant(true);
-    navigate("/products");
   };
   const openModalPastry = () => {
     setModalIsOpenPastry(true);
-    navigate("/menu");
   };
   const closeModal = () => {
     setModalIsOpenEquipment(false);
@@ -53,7 +48,10 @@ const MainContentBlock1 = () => {
     setModalIsOpenBeansVariant(false);
     setModalIsOpenPastry(false);
   };
-
+  const handleModalButtonClick = (path) => {
+    navigate(path);
+    closeModal();
+  };
   return (
     <div>
       <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
@@ -123,7 +121,7 @@ const MainContentBlock1 = () => {
               </p>
               <div>
                 <p onClick={toggleMore} className="p_more">
-                  {showMore ? "Less" : "More"}{" "}
+                  {showMore ? "Less" : "More"}
                 </p>
               </div>
             </div>
@@ -235,7 +233,10 @@ const MainContentBlock1 = () => {
                 where possibilities are limitless. Your journey to success
                 starts here!
               </p>
-              <button className="ModalButton" onClick={closeModal}>
+              <button
+                className="ModalButton"
+                onClick={() => handleModalButtonClick("/products")}
+              >
                 EXPLORE OUR STORE
               </button>
             </div>
@@ -291,7 +292,10 @@ const MainContentBlock1 = () => {
                 Click below to explore our full range and embark on a sensory
                 adventure. Your perfect cup awaits!
               </p>
-              <button className="ModalButton" onClick={closeModal}>
+              <button
+                className="ModalButton"
+                onClick={() => handleModalButtonClick("/products")}
+              >
                 EXPLORE OUR STORE
               </button>
             </div>
@@ -348,7 +352,10 @@ const MainContentBlock1 = () => {
                 Click below to explore our menu and indulge in the luxury of
                 great coffee on the move.
               </p>
-              <button className="ModalButton" onClick={closeModal}>
+              <button
+                className="ModalButton"
+                onClick={() => handleModalButtonClick("/menu")}
+              >
                 EXPLORE OUR MENU
               </button>
             </div>
@@ -405,7 +412,10 @@ const MainContentBlock1 = () => {
                 Click below to discover the artistry behind our bean selection
                 and elevate your coffee journey to new heights.
               </p>
-              <button className="ModalButton" onClick={closeModal}>
+              <button
+                className="ModalButton"
+                onClick={() => handleModalButtonClick("/products")}
+              >
                 EXPLORE OUR SELECTION
               </button>
             </div>
@@ -461,7 +471,10 @@ const MainContentBlock1 = () => {
                 Click below to explore our pastry offerings and elevate your
                 coffee break to a whole new level of enjoyment.
               </p>
-              <button className="ModalButton" onClick={closeModal}>
+              <button
+                className="ModalButton"
+                onClick={() => handleModalButtonClick("/menu")}
+              >
                 EXPLORE OUR PASTRIES
               </button>
             </div>
