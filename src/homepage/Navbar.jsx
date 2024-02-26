@@ -8,18 +8,33 @@ import { useProducts } from "../context/ProductContext";
 import { Badge, IconButton } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import SearchIcon from "@mui/icons-material/Search";
+import Pause from "@mui/icons-material/Pause";
 import "./aidana.scss";
 import { useLike } from "../context/LikeContext";
 import ModalComponent from "./ModalComponent";
 import map from "./assets/map-img/6555118.png";
-
 import micpicture from "../homepage/assets/kisspng-voice-over-google-voice-microphone-sound-change-vo-mic-icon-5b4f9f51337303.1524658615319447852107.jpg";
 import { useAuth } from "../context/AuthContext";
 import { ADMIN } from "../helpers/const";
+import { PlayArrow } from "@mui/icons-material";
+import Music from "./assets/Jacky Terrasson - Sous le Gel de Paris (megapesni.fm).mp3";
+
 const { webkitSpeechRecognition } = window;
 
 const Navbar = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const togglePlay = () => {
+    const audio = document.getElementById("audio"); // Получаем ссылку на аудио элемент
+    if (audio.paused) {
+      audio.play(); // Если аудио на паузе, запускаем воспроизведение
+      setIsPlaying(true); // Обновляем состояние
+    } else {
+      audio.pause(); // Если аудио воспроизводится, ставим на паузу
+      setIsPlaying(false); // Обновляем состояние
+    }
+  };
 
   const openModal = () => {
     setModalIsOpen(true);
@@ -93,7 +108,7 @@ const Navbar = () => {
 
   // !Auth
   const { user, handleLogOut } = useAuth();
-  const isAdmin = user && user === ADMIN;
+  const isAdmin = user && user.email === ADMIN;
   const [anchorEl, setAnchorEl] = useState(null);
   const [isAccountClicked, setIsAccountClicked] = useState(false);
 
@@ -120,14 +135,16 @@ const Navbar = () => {
     }
   };
 
+  console.log("User:", user);
+
   return (
     // style={{ position: "absolute", zIndex: "1" }}
     <div className="navbar_main">
-      <nav style={{ marginLeft: "-8%" }} className="nav">
+      <nav style={{ marginLeft: "-15%" }} className="nav">
         <img className="nav__logo" src={logo} alt="" />
         <div className="nav-div">
           <div
-            style={{ marginLeft: "-230%" }}
+            style={{ marginLeft: "-380%" }}
             onClick={(e) => setIsActive(!isActive)}
           >
             <SearchIcon
@@ -140,6 +157,16 @@ const Navbar = () => {
               }}
             />
           </div>
+          <IconButton onClick={togglePlay}>
+            {isPlaying ? <Pause /> : <PlayArrow />}
+          </IconButton>
+          <audio
+            id="audio"
+            src={Music}
+            autoPlay={isPlaying}
+            onEnded={() => setIsPlaying(false)} // При окончании воспроизведения сбрасываем состояние isPlaying
+          ></audio>
+
           <IconButton
             sx={{ marginTop: "-2%" }}
             size="large"
@@ -178,12 +205,12 @@ const Navbar = () => {
             </div>
           </NavLink>
         </div>
-        <div style={{ marginLeft: "-60%" }} className="nav_menu_">
+        <div style={{ marginLeft: "-95%" }} className="nav_menu_">
           <div
             style={{
               display: "flex",
-              justifyContent: "center",
-              alignContent: "center",
+              justifyContent: "flex-start",
+              alignItems: "center",
               width: "600px",
             }}
           >
@@ -196,6 +223,11 @@ const Navbar = () => {
             <Link style={{ textDecorationLine: "none" }} to={"./products"}>
               <span>Products</span>
             </Link>
+            {isAdmin ? (
+              <Link style={{ textDecorationLine: "none" }} to={"./admin"}>
+                <span>Admin</span>
+              </Link>
+            ) : null}
             <Link
               style={{
                 textDecorationLine: "none",
@@ -204,8 +236,8 @@ const Navbar = () => {
               }}
               onClick={() => setIsAccountClicked(!isAccountClicked)} // При клике на "Your Account" переключаем состояние
             >
-              <span style={{ marginLeft: "100px", paddingTop: "0px" }}>
-                {user ? `Hello, ${user.email}` : "Hello, Guest"}
+              <span style={{ marginLeft: "10px", paddingTop: "0px" }}>
+                {user ? `Hi, ${user.email}` : "Hello, Guest"}
               </span>
               <img className="nav__img" src={registration} alt="" />
             </Link>

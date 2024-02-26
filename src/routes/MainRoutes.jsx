@@ -24,11 +24,12 @@ const MainRoutes = () => {
     { id: 2, link: "/products", element: <ProductPage /> },
     { id: 3, link: "/menu", element: <Menu /> },
     { id: 4, link: "/cart", element: <CartPage /> },
-    { id: 5, link: "/payment", element: <PaymentForm /> },
+    { id: 5, link: "/pay", element: <CartWithPayment /> },
     { id: 6, link: "/comments", element: <Comments /> },
     { id: 7, link: "/favorite", element: <Favorite /> },
     { id: 8, link: "/register", element: <Registration /> },
     { id: 9, link: "/login", element: <LoginForm /> },
+    { id: 10, link: "/", element: <LoginForm /> },
   ];
 
   const PRIVATE_ROUTES = [

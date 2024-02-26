@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Andika&family=Dancing+Script&display=swap");
 body {
   overflow-x: hidden;
-  /* background-color: #442318; */
   background-color: #221518;
   margin: 0 !important;
 }
@@ -15,12 +14,10 @@ body {
 /* ! BAYANA Start MainContentBlock1 */
 .story__container {
   display: flex;
-  margin-top: 50px;
+  margin-top: 100px;
   margin-left: 90px;
-  width: 87%;
+  width: 85%;
   height: 378px;
-  top: 67px;
-  left: 6px;
   border-radius: 35px;
   border-width: 1px, 0px, 0px, 2px;
   border-style: solid;
@@ -98,7 +95,7 @@ body {
   display: flex;
   flex-direction: row;
   margin-top: 150px;
-  margin-left: 90px;
+  margin-left: 70px;
   width: 88%;
   height: 378px;
   top: 67px;
@@ -119,6 +116,22 @@ body {
     rgba(34, 21, 24, 0) 87.59%
   );
   background-color: rgba(173, 113, 74, 0.35);
+}
+.shop-button__offer {
+  background-color: rgb(69, 49, 41);
+  color: rgb(248, 228, 190, 1);
+  width: 170px;
+  height: 55px;
+  border-radius: 49px;
+  border: 2px solid rgb(248, 228, 190, 1);
+  font-size: 24px;
+  font-family: Andika;
+  margin-left: 8%;
+  margin-top: -1%;
+  cursor: pointer;
+}
+.shop-button__offer:hover {
+  background-color: #dabb9e;
 }
 .text__container {
   margin-left: 30px;
@@ -154,7 +167,7 @@ body {
   margin-left: 7%;
 }
 .text__container-right img {
-  margin-left: 50%;
+  margin-left: 35%;
 }
 .text__container img {
   margin-left: 7%;
@@ -187,7 +200,6 @@ body {
   background-size: cover;
   padding: 20px;
   border-radius: 10px;
-  /* z-index: 1000; */
 }
 
 .Overlay {
@@ -221,8 +233,11 @@ body {
   transform: scale(1.1);
 }
 /* ! BAYANA FINISH MainContentBlock1 */
+
+/* Bayana start Adaptive to MainContentBlock1 */
+
+/* Bayana finish Adaptive to MainContentBlock1 */
 /* ! Bayana Start Payment form */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
 
 .container {
   font-family: Andika;
@@ -388,11 +403,11 @@ body {
   position: absolute;
   top: -18px;
   right: -14px;
-  background-color: #ffe6a7;
-  color: black;
-  border-radius: 90%;
-  padding: 4px;
-  font-size: 12px;
+  background-color: #ffe6a7 !important;
+  color: black !important;
+  border-radius: 50% !important;
+  padding: 5px 5px 5px 5px !important;
+  font-size: 13px !important;
   font-weight: bold;
 }
 /* ! Cart Icon Badge finish */
@@ -412,6 +427,7 @@ body {
   font-size: 12px;
   font-weight: bold;
 }
+
 /* ! Like Icon Badge finish */
 /*? header start */
 .nav {

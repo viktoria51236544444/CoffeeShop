@@ -48,7 +48,7 @@ const Footer = () => {
 
             <div className="footer__item">
               <div className="footer__about">
-                <h3>About</h3>
+                <h3 style={{ marginLeft: "30px" }}>About</h3>
                 <ul>
                   <li>
                     <a href="#">our story</a>
@@ -76,7 +76,7 @@ const Footer = () => {
                 </ul>
               </div>
               <div className="footer__services">
-                <h3>Services</h3>
+                <h3 style={{ marginLeft: "50px" }}>Services</h3>
                 <ul>
                   <li>
                     <a href="#">payment options</a>

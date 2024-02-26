@@ -37,17 +37,9 @@ const LoginForm = () => {
   console.log(emailError, passwordError);
 
   return (
-    <div className={styles.main}>
-      <form
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          marginTop: "48px",
-          marginBottom: "10px",
-        }}
-        className={styles.form}
-        action=""
-      >
+    <div className={styles.main_login}>
+      <form className={styles.form_login} action="">
+        <p className={styles.form__header}>Please log in</p>
         <input
           sx={{ fontSize: "15px", fontWeight: "regular", letterSpacing: 1 }}
           className={styles.form__input}
