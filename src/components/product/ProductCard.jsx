@@ -12,8 +12,7 @@ import { useAuth } from "../../context/AuthContext";
 import { ADMIN } from "../../helpers/const";
 
 const ProductCard = ({ elem }) => {
-  const { addPostToBookmarks, checkPostInBm, checkProductInCoffeeCart } =
-    useBM();
+  const { checkPostInBm } = useBM();
   const { deleteProduct } = useProducts();
   const [isCoffeeLike, setIsCoffeeLike] = useState(false);
   const { likeCoffee, plusLikeCoffee } = useLike();
